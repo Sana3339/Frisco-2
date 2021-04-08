@@ -17,6 +17,12 @@ def homepage():
 
     return render_template("homepage.html")
 
+@app.route('/map')
+def search_map():
+    """Show map"""
+
+    return render_template("map.html")
+
 
 @app.route('/movies')
 def show_movies():
