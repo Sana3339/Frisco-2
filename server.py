@@ -27,7 +27,9 @@ def search_map():
 def show_neighborhood():
     """Show SF neighborhood details"""
 
-    return render_template("neighborhood.html")
+    title = "Mission"
+
+    return render_template("neighborhood.html", name=title)
 
 
 @app.route('/movies')
