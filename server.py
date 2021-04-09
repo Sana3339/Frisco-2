@@ -33,6 +33,7 @@ def show_neighborhood():
     median_rental = "$2418"
     walk_score = "98"
     transit_score = "75"
+    restaurant_list = ["Sharkeez", "Chipotle", "Sushi"]
 
     return render_template("neighborhood.html", 
                             name=title,
@@ -40,7 +41,8 @@ def show_neighborhood():
                             median_home=median_home,
                             median_rental=median_rental,
                             walk_score=walk_score,
-                            transit_score=transit_score
+                            transit_score=transit_score,
+                            restaurant_list=restaurant_list
                             )
 
 
