@@ -50,6 +50,13 @@ def show_users():
     return render_template("users.html", users=users)
 
 
+@app.route('/login')
+def show_login():
+    """Displays the account creation and log in page"""
+
+    return render_template("login.html")
+
+
 @app.route('/users', methods=["POST"])
 def register_user():
     """Create a new user."""
@@ -66,29 +73,27 @@ def register_user():
         crud.create_user(email, password)
         flash('Account created successfully.  Please log in.')
 
-    return redirect('/')
+    return redirect('/login')
 
-
-@app.route('/login')
-def login_user():
+@app.route('/handle-login', methods=['POST'])
+def handle_login():
     """Logs in an existing user."""
 
-    email = request.form.get("login_email")
-    password = request.form.get("login_password")
+    email = request.form.get("email")
+    password = request.form.get("password")
 
     user = crud.get_user_by_email(email)
 
-    if user != None:
-        if user.password == password:
-            flash('You have successfully logged in!')
-            session['user'] = user
-        else:
-            flash('Incorrect password.  Try again')
+    if user and user.password == password:
+        session['current_user'] = user.user_id
+        flash(f'Login Success {email}')
 
+        return redirect('/')
+            
     else:
-        flash('Email is not registered. Please create an account')
 
-    return render_template("login.html")
+        flash('Incorrect try again')
+        return redirect('/login')
 
 
 @app.route('/movies/<movie_id>')
