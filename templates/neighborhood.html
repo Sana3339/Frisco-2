@@ -3,18 +3,18 @@
 {% block title %} All Users {% endblock %}
 
 {% block body %}
-<h1>{{ name }} Details </h1>
+<h1>{{ name }} </h1>
 
   
-  <h2> long_desc </h2>
+  <h2> {{ description }} </h2>
 
-  <h2> Median Home Price: </h2>
+  <h2> Median Home Price: {{ median_home }} </h2>
 
-  <h2> Median Rental Price: </h2>
+  <h2> Median Rental Price: {{ median_rental }} </h2>
 
-  <h2> Walk Score </h2>
+  <h2> Walk Score: {{ walk_score }} </h2>
 
-  <h2> Transit Score </h2>
+  <h2> Transit Score: {{ transit_score }} </h2>
 
   <h2> Restaurant List </h2>
     <ul>

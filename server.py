@@ -27,9 +27,21 @@ def search_map():
 def show_neighborhood():
     """Show SF neighborhood details"""
 
-    title = "Mission"
+    title = "Marina"
+    description = "Beautiful neighborhood by the water"
+    median_home = "1,000,000"
+    median_rental = "$2418"
+    walk_score = "98"
+    transit_score = "75"
 
-    return render_template("neighborhood.html", name=title)
+    return render_template("neighborhood.html", 
+                            name=title,
+                            description=description,
+                            median_home=median_home,
+                            median_rental=median_rental,
+                            walk_score=walk_score,
+                            transit_score=transit_score
+                            )
 
 
 @app.route('/movies')
