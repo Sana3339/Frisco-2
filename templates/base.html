@@ -3,6 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+
+    <!-- jQuery script tag -->
+    <script
+    src="http://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    
+
     <title>
       {% block title %}{% endblock %}
     </title>
@@ -10,6 +18,11 @@
     {% block head %}{% endblock %}
   </head>
   <body>
+    <h3>Navigation</h3>
+    <li><a href="/">Home</a></li>
+    <li><a href="/map">Search</a></li>
+    <li><a href="/login">Login</a></li>
+
     {% for msg in get_flashed_messages() %}
       <p class="flash-msg">
         {{  msg  }}
@@ -19,5 +32,7 @@
     {% block body %}{% endblock %}
 
     {% block after_body %}{% endblock %}
+
+    <script src="/static/js/Frisco.js"></script>
   </body>
 </html>

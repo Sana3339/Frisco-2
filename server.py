@@ -19,9 +19,15 @@ def homepage():
 
 @app.route('/map')
 def search_map():
-    """Show map"""
+    """Show SF neighborhood map"""
 
     return render_template("map.html")
+
+@app.route('/neighborhood')
+def show_neighborhood():
+    """Show SF neighborhood details"""
+
+    return render_template("neighborhood.html")
 
 
 @app.route('/movies')
@@ -80,7 +86,7 @@ def login_user():
     else:
         flash('Email is not registered. Please create an account')
 
-    return redirect('/')
+    return render_template("login.html")
 
 
 @app.route('/movies/<movie_id>')

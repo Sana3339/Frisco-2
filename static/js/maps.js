@@ -4,7 +4,7 @@ function initMap(){
       center:{lat:37.7618, lng:-122.4432}
   }
 
-  //New map
+  //Create new map
   const map = new google.maps.Map(document.getElementById('map'), options);
 
   function addMarker(props){
@@ -36,7 +36,11 @@ function initMap(){
           content: 'Twin Peaks'
           },
           {coords: {lat:37.800415, lng:-122.417612},
-          content: 'Russian Hill'}
+          content: 'Russian Hill'
+          },
+          {coords: {lat:37.7941, lng:-122.4078},
+          content: 'Chinatown'
+          },
         ];  
   
         //loop through markers
