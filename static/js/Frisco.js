@@ -20,4 +20,3 @@ $('#post-housing').on('click', () => {
 $('#back').on('click', () => {
   window.location.href='/map';
 })
-
