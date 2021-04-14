@@ -1,9 +1,11 @@
 """Server for movie ratings app."""
 
-from flask import (Flask, render_template, request, flash, session, redirect)
+from flask import (Flask, render_template, request, flash, session, redirect, jsonify)
 from model import connect_to_db
+import requests
 import os
 import crud
+import json
 
 from jinja2 import StrictUndefined
 
@@ -11,7 +13,11 @@ app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
-YELP_API_KEY = os.environ['YELP_API_KEY']
+GOOG_API_KEY = os.environ['GOOGLE_API_KEY']
+
+#hardcoding a neighborhood and place_id for testing purposes
+neighborhood = "Marina"
+place_id = "ChIJW5ygw9aAhYARSNqml-xlEQ4"
 
 @app.route('/')
 def homepage():
@@ -25,17 +31,54 @@ def search_map():
 
     return render_template("map.html")
 
-@app.route('/neighborhood')
-def show_neighborhood():
+
+@app.route('/api/website.json/<place_id>')
+def get_restaurant_website(place_id):
+    """Send restaurant id to Google Places Search to get website link."""
+    
+    payload = {"key": GOOG_API_KEY,
+                "place_id": place_id,
+                "fields": "website" }
+
+    res = requests.get('https://maps.googleapis.com/maps/api/place/details/json', params=payload)
+
+    converted_res = res.json()
+    website = converted_res["result"]["website"]
+    
+    return website
+
+
+@app.route('/restaurants/<neighborhood>')
+def show_restaurant_details(neighborhood):
+    """Show a list of restaurants"""
+
+    payload = {"query": f"restaurants in {neighborhood}",
+                "key": GOOG_API_KEY}
+
+    res = requests.get('https://maps.googleapis.com/maps/api/place/textsearch/json', params=payload)
+
+    search_results = res.json()
+    
+    for i in range(5):
+        place_id = search_results["results"][i].get("place_id")
+        website = get_restaurant_website(place_id)
+        data = search_results["results"]
+        data[i]["website"] = website
+
+    #return jsonify(data)
+    return render_template('restaurant_details.html', data=data)
+
+@app.route('/neighborhood/<neighborhood_id>')
+def show_neighborhood(neighborhood_id):
     """Show SF neighborhood details"""
 
-    title = "Marina"
+    title = neighborhood_id
     description = "Beautiful neighborhood by the water"
     median_home = "1,000,000"
     median_rental = "$2418"
     walk_score = "98"
     transit_score = "75"
-    restaurant_list = ["Sharkeez", "Chipotle", "Sushi"]
+    restaurant_list = get_api_details(neighborhood_id)
 
     return render_template("neighborhood.html", 
                             name=title,
@@ -48,6 +91,11 @@ def show_neighborhood():
                             )
 
 
+
+
+
+
+#------------------------------------------#
 @app.route('/movies')
 def show_movies():
     """List all movies"""
