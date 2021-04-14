@@ -48,25 +48,24 @@ def get_restaurant_website(place_id):
     return website
 
 
-@app.route('/restaurants/<neighborhood>')
-def show_restaurant_details(neighborhood):
+@app.route('/restaurants/<neighborhood_id>')
+def show_restaurant_details(neighborhood_id):
     """Show a list of restaurants"""
 
-    payload = {"query": f"restaurants in {neighborhood}",
+    payload = {"query": f"restaurants in {neighborhood_id}",
                 "key": GOOG_API_KEY}
 
     res = requests.get('https://maps.googleapis.com/maps/api/place/textsearch/json', params=payload)
 
     search_results = res.json()
     
-    for i in range(5):
+    for i in range(20):
         place_id = search_results["results"][i].get("place_id")
         website = get_restaurant_website(place_id)
-        data = search_results["results"]
-        data[i]["website"] = website
+        restaurant_data = search_results["results"]
+        restaurant_data[i]["website"] = website
 
-    #return jsonify(data)
-    return render_template('restaurant_details.html', data=data)
+    return restaurant_data
 
 @app.route('/neighborhood/<neighborhood_id>')
 def show_neighborhood(neighborhood_id):
@@ -78,7 +77,7 @@ def show_neighborhood(neighborhood_id):
     median_rental = "$2418"
     walk_score = "98"
     transit_score = "75"
-    restaurant_list = get_api_details(neighborhood_id)
+    restaurant_data = show_restaurant_details(neighborhood_id)
 
     return render_template("neighborhood.html", 
                             name=title,
@@ -87,7 +86,7 @@ def show_neighborhood(neighborhood_id):
                             median_rental=median_rental,
                             walk_score=walk_score,
                             transit_score=transit_score,
-                            restaurant_list=restaurant_list
+                            restaurant_data=restaurant_data
                             )
 
 

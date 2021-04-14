@@ -22,11 +22,15 @@
   <h2> Transit Score: {{ transit_score }} </h2>
 
   <h2> Restaurants </h2>
-    <ul>
-      {% for restaurant in restaurant_list %}
-      <li>{{ restaurant }}</li>
+    
+      {% for restaurant in restaurant_data %}
+      <ul>
+        <h4>{{ restaurant.name }}</h4>
+        <li>{{ restaurant.formatted_address }}</li>
+        <li>{{ restaurant.rating }}</li>
+        <li><a href="{{ restaurant.website }}">Link</a></li>
+     </ul>
       {% endfor %}
-    </ul>
 
     <button id="find-housing">Find Housing</button>
     <button id="post-housing">Post Housing</button>

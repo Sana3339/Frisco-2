@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Restaurant Results{% endblock %}
+
+{% block content %}
+        <div>
+          <h2>Results as JSON</h2>
+          <pre>{{ (data) }}</pre>
+        </div>
+
+    {% for restaurant in data %}
+
+      <ul>
+        <h4><b>{{ restaurant.name }}</b></h4>
+        <li>{{ restaurant.formatted_address }}</li>
+        <li>{{ restaurant.rating }}</li>
+        <li>Need to troubleshoot website here</li>
+        
+    </ul>
+
+    {% endfor %}
+    
+{% endblock %}
