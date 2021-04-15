@@ -20,6 +20,7 @@ class Neighborhood(db.Model):
     median_home_price = db.Column(db.String, nullable=False)
     walk_score = db.Column(db.Integer, nullable=True)
     transit_score = db.Column(db.Integer, nullable=True)
+    images = db.Column(db.Text, nullable=True)
 
     def __repr__(self):
 

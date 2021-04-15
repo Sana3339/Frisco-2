@@ -4,7 +4,7 @@ from model import db, Neighborhood, Posting, User, Image_of_Posting, Image_of_Ne
 
 def create_neighborhood(neighborhood_id, name, latitude, longitude,
                         short_desc, long_desc, median_rent,
-                        median_home_price, walk_score, transit_score):
+                        median_home_price, walk_score, transit_score,images):
     """Create and return a new neighborhood."""
 
     neighborhood = Neighborhood(neighborhood_id=neighborhood_id,
@@ -16,7 +16,8 @@ def create_neighborhood(neighborhood_id, name, latitude, longitude,
                                 median_rent=median_rent,
                                 median_home_price=median_home_price,
                                 walk_score=walk_score,
-                                transit_score=transit_score)
+                                transit_score=transit_score,
+                                images=images)
 
     db.session.add(neighborhood)
     db.session.commit()

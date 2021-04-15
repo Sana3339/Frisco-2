@@ -28,7 +28,8 @@ neighborhoods = [
     'median_rent': '$3,100',
     'median_home_price': '1,200,000',
     'walk_score': '98',
-    'transit_score': '75'
+    'transit_score': '75',
+    'images': 'some text'
     },
     {
     'neighborhood_id': 'mission',
@@ -40,7 +41,8 @@ neighborhoods = [
     'median_rent': '$2,600',
     'median_home_price': '1,000,000',
     'walk_score': '99',
-    'transit_score': '85'        
+    'transit_score': '85',
+    'images': '/static/img/marina1.jpeg'        
     },
     {
     'neighborhood_id': 'japantown',
@@ -52,7 +54,8 @@ neighborhoods = [
     'median_rent': '$2,600',
     'median_home_price': '1,000,000',
     'walk_score': '99',
-    'transit_score': '85'        
+    'transit_score': '85',
+    'images': 'placeholder'        
     }        
 ]
 
@@ -66,6 +69,7 @@ median_rent = ""
 median_home_price = ""
 walk_score = ""
 transit_score = ""
+images = ""
 
 for neighborhood in neighborhoods: 
     neighborhood_id = neighborhood['neighborhood_id']
@@ -78,9 +82,10 @@ for neighborhood in neighborhoods:
     median_home_price = neighborhood['median_home_price']
     walk_score = neighborhood['walk_score']
     transit_score = neighborhood['transit_score']
+    images = neighborhood['images']
 
     crud.create_neighborhood(neighborhood_id, name, latitude, longitude, 
-        short_desc, long_desc, median_rent, median_home_price, walk_score, transit_score)
+        short_desc, long_desc, median_rent, median_home_price, walk_score, transit_score, images)
                                                      
 
 #Create a list of images with which to seed the database

@@ -88,6 +88,7 @@ def show_neighborhood(neighborhood_id):
     median_rental = neighborhood.median_rent
     walk_score = neighborhood.walk_score
     transit_score = neighborhood.transit_score
+    neighborhood_image = neighborhood.images
     
     restaurant_data = show_restaurant_details(neighborhood_id)
 
@@ -99,7 +100,8 @@ def show_neighborhood(neighborhood_id):
                             walk_score=walk_score,
                             transit_score=transit_score,
                             restaurant_data=restaurant_data,
-                            images=images
+                            images=images,
+                            neighborhood_image=neighborhood_image
                             )
 
 
