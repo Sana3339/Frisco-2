@@ -58,14 +58,22 @@ def show_restaurant_details(neighborhood_id):
     res = requests.get('https://maps.googleapis.com/maps/api/place/textsearch/json', params=payload)
 
     search_results = res.json()
+    data = search_results["results"]
+
+    #I'm creating an empty list to limit the API search results to 5. 
+    #This limitation allows us to do a separate API call and add the website to our search results
+    #If you don't limit it, you will get a 'key error' for the 'website' field and the page won't load
+    limited_data = []
+
+    for i in range(5):
+        limited_data.append(data[i])    
     
-    for i in range(20):
+    for i in range(5):
         place_id = search_results["results"][i].get("place_id")
         website = get_restaurant_website(place_id)
-        restaurant_data = search_results["results"]
-        restaurant_data[i]["website"] = website
+        limited_data[i]["website"] = website
 
-    return restaurant_data
+    return limited_data
 
 @app.route('/neighborhood/<neighborhood_id>')
 def show_neighborhood(neighborhood_id):

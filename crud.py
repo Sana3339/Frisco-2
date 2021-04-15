@@ -21,6 +21,16 @@ def create_neighborhood(neighborhood_id, name, latitude, longitude,
     db.session.add(neighborhood)
     db.session.commit()
 
+def get_neighborhood_by_id(neighborhood_id):
+    """Provided a neighborhood_id, return the neighborhood object."""
+
+    neighborhood = Neighborhood.query.get(neighborhood_id)
+    print(neighborhood)
+
+    return neighborhood
+
+
+
 # from model import db, User, Movie, Rating, connect_to_db
 
 # def create_user(email, password):

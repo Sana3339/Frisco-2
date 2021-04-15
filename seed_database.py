@@ -15,7 +15,7 @@ os.system('createdb neighborhoods')
 model.connect_to_db(server.app)
 model.db.create_all()
 
-#Create a dictionary of neighborhoods with which to seed the db
+#Create a list of neighborhoods with which to seed the db
 
 neighborhoods = [
     {
@@ -70,6 +70,7 @@ for neighborhood in neighborhoods:
     crud.create_neighborhood(neighborhood_id, name, latitude, longitude, 
         short_desc, long_desc, median_rent, median_home_price, walk_score, transit_score)
                                                      
+
 
 
 # #Load movie data from JSON file
