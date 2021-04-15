@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Housing {% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+
+  <h1>{{ neighborhood_id }} housing </h1>
+
+  <button class="post-housing">Post housing</button>
+
+  {% for posting in postings %}
+    <div>
+      {{ posting.date }}<h3>{{ posting.title }} </h3>
+        <p> {{ posting.desc}}</p>
+        <p> {{ posting.contact_info}}</p>
+    </div>
+
+  {% endfor %}
+  
+{% endblock %}
