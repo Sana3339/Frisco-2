@@ -96,8 +96,49 @@ for n in range(10):
 
     crud.create_user(email, password)
 
+#Create fake postings with which to seed the db
 
-Create a list of images with which to seed the database
+postings = [
+    {
+    'neighborhood_id': 'marina',
+    'user_email': 'user1@test.com',
+    'date': datetime.now(),
+    'title': 'Beautiful room by the Palace of Fine Arts',
+    'desc': 'Gorgeous panoramic views.  Youll be living in a house with 2 other girls.',
+    'contact_info': 'Call 415-222-3333'
+    },
+    {
+    'neighborhood_id': 'mission',
+    'user_email': 'user2@test.com',
+    'date': datetime.now(),
+    'title': 'Room available immediately in 2b/2b',
+    'desc': 'Great location right by Valencia street with lots of restaurants',
+    'contact_info': 'Email user2@test.com',
+    }
+]
+
+neighborhood_id = ""
+user_email = ""
+date = ""
+title = ""
+desc = ""
+contact_info = ""
+
+for posting in postings:
+
+    user_email = posting['user_email']
+    neighborhood_id = posting['neighborhood_id']
+    date = posting['date']
+    title = posting['title']
+    desc = posting['desc']
+    contact_info = posting['contact_info']
+
+    crud.create_posting(neighborhood_id, user_email, date, title, desc, contact_info)
+
+
+#Will likely delete functions below this line ------------------   
+
+#Create a list of images with which to seed the database
 
 images_of_neighborhoods = [
     {

@@ -37,6 +37,19 @@ def create_user(email, password):
     db.session.add(user)
     db.session.commit()
 
+def create_posting(neighborhood_id, user_email, date, title, desc, contact_info):
+    
+    posting = Posting(neighborhood_id=neighborhood_id,
+                        user_email=user_email,
+                        date=date,
+                        title=title,
+                        desc=desc,
+                        contact_info=contact_info,
+                        )
+
+    db.session.add(posting)
+    db.session.commit()
+
 
 def add_image_to_neighborhood(neighborhood_id, image_of_neighborhood):
     """Provided image details, add to neighborhood images table and link to the correct neighborhood."""
