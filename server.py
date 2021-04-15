@@ -65,10 +65,10 @@ def show_restaurant_details(neighborhood_id):
     #If you don't limit it, you will get a 'key error' for the 'website' field and the page won't load
     limited_data = []
 
-    for i in range(5):
+    for i in range(6):
         limited_data.append(data[i])    
     
-    for i in range(5):
+    for i in range(6):
         place_id = search_results["results"][i].get("place_id")
         website = get_restaurant_website(place_id)
         limited_data[i]["website"] = website
@@ -79,18 +79,20 @@ def show_restaurant_details(neighborhood_id):
 def show_neighborhood(neighborhood_id):
     """Show SF neighborhood details"""
 
-    title = neighborhood_id
-    description = "Beautiful neighborhood by the water"
-    median_home = "1,000,000"
-    median_rental = "$2418"
-    walk_score = "98"
-    transit_score = "75"
+    neighborhood = crud.get_neighborhood_by_id(neighborhood_id)
+
+    name = neighborhood_id
+    long_desc = neighborhood.long_desc
+    median_home_price = neighborhood.median_home_price
+    median_rental = neighborhood.median_rent
+    walk_score = neighborhood.walk_score
+    transit_score = neighborhood.transit_score
     restaurant_data = show_restaurant_details(neighborhood_id)
 
     return render_template("neighborhood.html", 
-                            name=title,
-                            description=description,
-                            median_home=median_home,
+                            name=name,
+                            description=long_desc,
+                            median_home=median_home_price,
                             median_rental=median_rental,
                             walk_score=walk_score,
                             transit_score=transit_score,
