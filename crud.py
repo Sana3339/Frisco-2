@@ -25,10 +25,26 @@ def get_neighborhood_by_id(neighborhood_id):
     """Provided a neighborhood_id, return the neighborhood object."""
 
     neighborhood = Neighborhood.query.get(neighborhood_id)
-    print(neighborhood.long_desc)
 
     return neighborhood
 
+
+def add_image_to_neighborhood(neighborhood_id, image_of_neighborhood):
+    """Provided image details, add to neighborhood images table and link to the correct neighborhood."""
+
+    image_of_neighborhood = Image_of_Neighborhood(neighborhood_id=neighborhood_id,
+                                    image_of_neighborhood=image_of_neighborhood)
+
+    db.session.add(image_of_neighborhood)
+    db.session.commit()
+
+
+def get_image_for_neighborhood(neighborhood_id):
+    """Provided a neighborhood, return images for that neighborhood."""
+
+    images = Image_of_Neighborhood.query.filter_by(neighborhood_id=neighborhood_id).all()
+
+    return images
 
 
 # from model import db, User, Movie, Rating, connect_to_db

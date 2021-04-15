@@ -41,7 +41,19 @@ neighborhoods = [
     'median_home_price': '1,000,000',
     'walk_score': '99',
     'transit_score': '85'        
-    }    
+    },
+    {
+    'neighborhood_id': 'japantown',
+    'name': 'Japantown',
+    'latitude': '37.7854',
+    'longitude': '-122.4294',
+    'short_desc': 'ramen',
+    'long_desc': 'cherry blossom festival',
+    'median_rent': '$2,600',
+    'median_home_price': '1,000,000',
+    'walk_score': '99',
+    'transit_score': '85'        
+    }        
 ]
 
 neighborhood_id = ""
@@ -71,7 +83,27 @@ for neighborhood in neighborhoods:
         short_desc, long_desc, median_rent, median_home_price, walk_score, transit_score)
                                                      
 
+#Create a list of images with which to seed the database
 
+images_of_neighborhoods = [
+    {
+    'neighborhood_id': 'marina',
+    'image_of_neighborhood': '/static/img/marina1.jpeg'
+    },
+    {
+    'neighborhood_id': 'mission',
+    'image_of_neighborhood': 'placeholder'        
+    }
+]
+
+neighborhood_id = ""
+image_of_neighborhood = ""
+
+for image in images_of_neighborhoods:
+    neighborhood_id = image['neighborhood_id']
+    image_of_neighborhood = image['image_of_neighborhood']
+
+    crud.add_image_to_neighborhood(neighborhood_id, image_of_neighborhood)
 
 # #Load movie data from JSON file
 # with open('data/movies.json') as f:

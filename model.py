@@ -84,7 +84,7 @@ class Image_of_Neighborhood(db.Model):
 
     def __repr__(self):
 
-        return f'<id={self.image_of_neighborhood_id} neighborhood={self.neighborhood_id}>'
+        return f'<id={self.image_of_neighborhood_id} neighborhood={self.neighborhood_id} image_link={self.image_of_neighborhood}>'
 
 
 class Restaurant(db.Model):
