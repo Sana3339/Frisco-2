@@ -29,7 +29,7 @@ neighborhoods = [
     'median_home_price': '1,200,000',
     'walk_score': '98',
     'transit_score': '75',
-    'images': 'some text'
+    'images': '/static/img/marina1.jpeg'
     },
     {
     'neighborhood_id': 'mission',
@@ -42,7 +42,7 @@ neighborhoods = [
     'median_home_price': '1,000,000',
     'walk_score': '99',
     'transit_score': '85',
-    'images': '/static/img/marina1.jpeg'        
+    'images': '/static/img/mission1.jpg'        
     },
     {
     'neighborhood_id': 'japantown',
@@ -55,7 +55,7 @@ neighborhoods = [
     'median_home_price': '1,000,000',
     'walk_score': '99',
     'transit_score': '85',
-    'images': 'placeholder'        
+    'images': '/static/img/japantown1.jpeg'        
     }        
 ]
 
@@ -88,7 +88,16 @@ for neighborhood in neighborhoods:
         short_desc, long_desc, median_rent, median_home_price, walk_score, transit_score, images)
                                                      
 
-#Create a list of images with which to seed the database
+#Create fake users with which to seed the db
+
+for n in range(10):
+    email = f'user{n}@test.com' 
+    password = 'test'
+
+    crud.create_user(email, password)
+
+
+Create a list of images with which to seed the database
 
 images_of_neighborhoods = [
     {

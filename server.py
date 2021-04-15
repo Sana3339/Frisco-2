@@ -65,10 +65,10 @@ def show_restaurant_details(neighborhood_id):
     #If you don't limit it, you will get a 'key error' for the 'website' field and the page won't load
     limited_data = []
 
-    for i in range(6):
+    for i in range(4):
         limited_data.append(data[i])    
     
-    for i in range(6):
+    for i in range(4):
         place_id = search_results["results"][i].get("place_id")
         website = get_restaurant_website(place_id)
         limited_data[i]["website"] = website

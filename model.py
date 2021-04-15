@@ -1,7 +1,7 @@
 """Models for Frisco app."""
 
 from flask_sqlalchemy import SQLAlchemy
-#from datetime import datetime
+from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -33,15 +33,18 @@ class Posting(db.Model):
 
     posting_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     neighborhood_id = db.Column(db.String, db.ForeignKey('neighborhoods.neighborhood_id'))
+    user_email = db.Column(db.String, db.ForeignKey('users.email'))
+    date = db.Column(db.DateTime, nullable=False)
     title = db.Column(db.Text, nullable=False)
     desc = db.Column(db.Text, nullable=False)
     contact_info = db.Column(db.Text, nullable=False)
 
     neighborhood = db.relationship( 'Neighborhood', backref='postings')
+    user = db.relationship('User', backref='postings')
 
     def __repr__(self):
 
-        return f'<id={self.posting_id} title={self.title} user={self.user_id} neighborhood={neighborhood_id}>'
+        return f'<id={self.posting_id} title={self.title}, backref={self.neighborhood_id} user={self.user_email}>'
 
 class User(db.Model):
     """A user."""

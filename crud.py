@@ -29,6 +29,14 @@ def get_neighborhood_by_id(neighborhood_id):
 
     return neighborhood
 
+def create_user(email, password):
+    """Create a new user in the database."""
+
+    user = User(email=email, password=password)
+
+    db.session.add(user)
+    db.session.commit()
+
 
 def add_image_to_neighborhood(neighborhood_id, image_of_neighborhood):
     """Provided image details, add to neighborhood images table and link to the correct neighborhood."""
