@@ -29,6 +29,16 @@ def get_neighborhood_by_id(neighborhood_id):
 
     return neighborhood
 
+def create_list_of_neighborhood_images(neighborhood_id):
+
+    neighborhood = Neighborhood.query.get(neighborhood_id)
+    str_of_images = neighborhood.images
+    list_of_images = str_of_images.rsplit(",")
+
+    return list_of_images
+
+
+
 def create_user(email, password):
     """Create a new user in the database."""
 

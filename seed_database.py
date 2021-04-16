@@ -29,7 +29,7 @@ neighborhoods = [
     'median_home_price': '1,200,000',
     'walk_score': '98',
     'transit_score': '75',
-    'images': ['/static/img/marina1.jpeg']
+    'images': '/static/img/marina1.jpeg, /static/img/marina2.jpeg, /static/img/marina3.jpeg'
     },
     {
     'neighborhood_id': 'mission',
@@ -42,7 +42,7 @@ neighborhoods = [
     'median_home_price': '1,000,000',
     'walk_score': '99',
     'transit_score': '85',
-    'images': ['/static/img/mission1.jpg', '/static/img/mission2.jpeg']        
+    'images': '/static/img/mission1.jpg, /static/img/mission2.jpeg, /static/img/mission3.jpeg'        
     },
     {
     'neighborhood_id': 'japantown',
@@ -55,7 +55,7 @@ neighborhoods = [
     'median_home_price': '1,000,000',
     'walk_score': '99',
     'transit_score': '85',
-    'images': ['/static/img/japantown1.jpeg']        
+    'images': '/static/img/japantown1.jpeg, /static/img/japantown2.jpeg, /static/img/japantown3.jpeg'        
     }        
 ]
 
