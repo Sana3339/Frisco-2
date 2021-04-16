@@ -19,6 +19,8 @@ GOOG_API_KEY = os.environ['GOOGLE_API_KEY']
 neighborhood = "Marina"
 place_id = "ChIJW5ygw9aAhYARSNqml-xlEQ4"
 
+
+
 @app.route('/')
 def homepage():
     """View homepage"""
@@ -65,10 +67,10 @@ def show_restaurant_details(neighborhood_id):
     #If you don't limit it, you will get a 'key error' for the 'website' field and the page won't load
     limited_data = []
 
-    for i in range(3):
+    for i in range(5):
         limited_data.append(data[i])    
     
-    for i in range(3):
+    for i in range(5):
         place_id = search_results["results"][i].get("place_id")
         website = get_restaurant_website(place_id)
         limited_data[i]["website"] = website
@@ -88,7 +90,6 @@ def show_neighborhood(neighborhood_id):
     median_rental = neighborhood.median_rent
     walk_score = neighborhood.walk_score
     transit_score = neighborhood.transit_score
-    neighborhood_image = neighborhood.images
     
     restaurant_data = show_restaurant_details(neighborhood_id)
 
@@ -100,8 +101,7 @@ def show_neighborhood(neighborhood_id):
                             walk_score=walk_score,
                             transit_score=transit_score,
                             restaurant_data=restaurant_data,
-                            images=images,
-                            neighborhood_image=neighborhood_image
+                            images=images
                             )
 
 @app.route('/housing/<neighborhood_id>')

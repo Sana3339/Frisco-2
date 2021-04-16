@@ -29,7 +29,7 @@ neighborhoods = [
     'median_home_price': '1,200,000',
     'walk_score': '98',
     'transit_score': '75',
-    'images': '/static/img/marina1.jpeg'
+    'images': ['/static/img/marina1.jpeg']
     },
     {
     'neighborhood_id': 'mission',
@@ -42,7 +42,7 @@ neighborhoods = [
     'median_home_price': '1,000,000',
     'walk_score': '99',
     'transit_score': '85',
-    'images': '/static/img/mission1.jpg'        
+    'images': ['/static/img/mission1.jpg', '/static/img/mission2.jpeg']        
     },
     {
     'neighborhood_id': 'japantown',
@@ -55,7 +55,7 @@ neighborhoods = [
     'median_home_price': '1,000,000',
     'walk_score': '99',
     'transit_score': '85',
-    'images': '/static/img/japantown1.jpeg'        
+    'images': ['/static/img/japantown1.jpeg']        
     }        
 ]
 
@@ -126,8 +126,8 @@ contact_info = ""
 
 for posting in postings:
 
-    user_email = posting['user_email']
     neighborhood_id = posting['neighborhood_id']
+    user_email = posting['user_email']
     date = posting['date']
     title = posting['title']
     desc = posting['desc']
@@ -147,7 +147,11 @@ images_of_neighborhoods = [
     },
     {
     'neighborhood_id': 'mission',
-    'image_of_neighborhood': 'placeholder'        
+    'image_of_neighborhood': '/static/img/mission1.jpg'        
+    },
+    {
+    'neighborhood_id': 'japantown',
+    'image_of_neighborhood': '/static/img/japantown1.jpeg'        
     }
 ]
 
