@@ -20,11 +20,3 @@ $('.post-housing').on('click', () => {
 $('#back').on('click', () => {
   window.location.href='/map';
 })
-
-$('#test-button').on('click', () => {
-  $.get('/quick-details/marina', (response) => {
-    $('#test').html(response['name']);
-    console.log(response);
-  })
-  alert('Click is working!');
-})

@@ -1,3 +1,14 @@
+$(document).ready(function() {
+  $.get('/neighborhood-details.json', (response) => {
+    const neighborhood_array = (response);
+    for (const neighborhood of neighborhood_array) {
+      console.log("neighborhood: ", neighborhood);
+    }
+  })
+  alert('Click is working!');
+})
+
+
 function initMap(){
     const options = {
       zoom:11.95,
@@ -7,7 +18,10 @@ function initMap(){
   //Create new map
   const map = new google.maps.Map(document.getElementById('map'), options);
 
+
+
   function addMarker(props){
+     
     let marker = new google.maps.Marker({
       position: props.coords,
       map:map
@@ -18,12 +32,13 @@ function initMap(){
         let infoWindow = new google.maps.InfoWindow({
         content: props.content
     });
+    
 
         marker.addListener('click', function(){
           infoWindow.open(map, marker);
         document.querySelector("#neighborhood-desc")
         .innerHTML = `<h3>This is the ${props.content} district.
-        <a href="/neighborhood/mission">Click to learn more</a>
+        <a href="/neighborhood/${props.content}">Click to learn more</a>
         Click on another marker to learn about a different neighborhood.`;
       });
       }
@@ -33,7 +48,7 @@ function initMap(){
        let markers = [
         {
           coords: {lat:37.8037, lng:-122.4368},
-          content: 'Marina'
+          content: '<b>Marina</b>'
           },
           {
           coords: {lat:37.7529, lng:-122.4474},
@@ -52,13 +67,3 @@ function initMap(){
           addMarker(markers[i]);
         };
     } 
-
-    $(document).ready(function() {
-      $.get('/neighborhood-details.json', (response) => {
-        const neighborhood_array = (response);
-        for (const neighborhood of neighborhood_array) {
-          console.log("neighborhood: ", neighborhood);
-        }
-      })
-      alert('Click is working!');
-    })

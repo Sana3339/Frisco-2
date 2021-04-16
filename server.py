@@ -123,6 +123,7 @@ def get_neighborhood_details():
     all_neighborhood_details = []
 
     for neighborhood in neighborhoods_obj:
+        neighborhood_id = neighborhood.neighborhood_id
         name = neighborhood.name
         short_desc = neighborhood.short_desc
         latitude = neighborhood.latitude
@@ -130,6 +131,7 @@ def get_neighborhood_details():
         link = '/neighborhood/{neighborhood.neighborhood_id}'
 
         neighborhood_dict = {
+            'neighborhood_id': neighborhood_id,
             'name': name, 
             'short_desc': short_desc,
             'latitude': latitude,
