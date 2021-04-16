@@ -115,6 +115,33 @@ def show_housing(neighborhood_id):
                                             neighborhood_id=neighborhood_id)
 
 
+@app.route('/neighborhood-details.json')
+def get_neighborhood_details():
+
+    neighborhoods_obj = crud.get_all_neighborhoods()
+
+    all_neighborhood_details = []
+
+    for neighborhood in neighborhoods_obj:
+        name = neighborhood.name
+        short_desc = neighborhood.short_desc
+        latitude = neighborhood.latitude
+        longitude = neighborhood.longitude
+        link = '/neighborhood/{neighborhood.neighborhood_id}'
+
+        neighborhood_dict = {
+            'name': name, 
+            'short_desc': short_desc,
+            'latitude': latitude,
+            'longitude': longitude,
+            'link': link
+            }
+
+        all_neighborhood_details.append(neighborhood_dict)
+    
+    return jsonify(all_neighborhood_details)
+
+
 #------------------------------------------#
 @app.route('/movies')
 def show_movies():

@@ -29,6 +29,13 @@ def get_neighborhood_by_id(neighborhood_id):
 
     return neighborhood
 
+def get_all_neighborhoods():
+    """Return details of all neighborhoods."""
+
+    neighborhoods = Neighborhood.query.all()
+
+    return neighborhoods
+
 def create_list_of_neighborhood_images(neighborhood_id):
 
     neighborhood = Neighborhood.query.get(neighborhood_id)

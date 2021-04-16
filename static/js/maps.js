@@ -20,15 +20,14 @@ function initMap(){
     });
 
         marker.addListener('click', function(){
-        infoWindow.open(map, marker);
+          infoWindow.open(map, marker);
         document.querySelector("#neighborhood-desc")
         .innerHTML = `<h3>This is the ${props.content} district.
         <a href="/neighborhood/mission">Click to learn more</a>
-        
         Click on another marker to learn about a different neighborhood.`;
-       });
+      });
       }
-    }   
+    }       
 
        // Array of makers
        let markers = [
@@ -54,5 +53,12 @@ function initMap(){
         };
     } 
 
-
-
+    $(document).ready(function() {
+      $.get('/neighborhood-details.json', (response) => {
+        const neighborhood_array = (response);
+        for (const neighborhood of neighborhood_array) {
+          console.log("neighborhood: ", neighborhood);
+        }
+      })
+      alert('Click is working!');
+    })
