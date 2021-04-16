@@ -21,6 +21,11 @@ function initMap(){
 
         marker.addListener('click', function(){
         infoWindow.open(map, marker);
+        document.querySelector("#neighborhood-desc")
+        .innerHTML = `<h3>This is the ${props.content} district.
+        <a href="/neighborhood/mission">Click to learn more</a>
+        
+        Click on another marker to learn about a different neighborhood.`;
        });
       }
     }   
@@ -48,4 +53,6 @@ function initMap(){
           addMarker(markers[i]);
         };
     } 
+
+
 

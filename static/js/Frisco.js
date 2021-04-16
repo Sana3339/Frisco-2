@@ -13,7 +13,7 @@ $('#find-housing').on('click', () => {
 })
 
 $('.post-housing').on('click', () => {
-  alert('You must create an account to post housing');
+  alert('You must have an account to post housing');
   window.location.href='/login';
 })
 
