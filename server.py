@@ -27,11 +27,17 @@ def homepage():
 
     return render_template("homepage.html")
 
-@app.route('/map')
+@app.route('/search_map')
 def search_map():
     """Show SF neighborhood map"""
 
-    return render_template("map.html")
+    return render_template("search_map.html")
+
+@app.route('/postings_map')
+def show_postings_map():
+    """Show SF neighborhood map for users to select which neighborhood to post housing in."""
+
+    return render_template("postings_map.html")
 
 
 @app.route('/api/website.json/<place_id>')
@@ -123,20 +129,16 @@ def get_neighborhood_details():
     all_neighborhood_details = []
 
     for neighborhood in neighborhoods_obj:
-        neighborhood_id = neighborhood.neighborhood_id
         name = neighborhood.name
         short_desc = neighborhood.short_desc
         latitude = neighborhood.latitude
         longitude = neighborhood.longitude
-        link = '/neighborhood/{neighborhood.neighborhood_id}'
 
         neighborhood_dict = {
-            'neighborhood_id': neighborhood_id,
             'name': name, 
             'short_desc': short_desc,
             'latitude': latitude,
             'longitude': longitude,
-            'link': link
             }
 
         all_neighborhood_details.append(neighborhood_dict)

@@ -21,9 +21,9 @@ neighborhoods = [
     {
     'neighborhood_id': 'marina',
     'name': 'Marina',
-    'latitude': '36.6844',
-    'longitude': '-121.8022',
-    'short_desc': 'By the water',
+    'latitude': 37.8037,
+    'longitude': -122.4368,
+    'short_desc': '<h3>Beautiful neighborhood by the water. <a href="/neighborhood/marina">Click to learn more</a></h3>',
     'long_desc': 'Gorgeous neighborhood on the marina with beautiful weather',
     'median_rent': '$3,100',
     'median_home_price': '1,200,000',
@@ -34,9 +34,9 @@ neighborhoods = [
     {
     'neighborhood_id': 'mission',
     'name': 'Mission',
-    'latitude': '37.7599',
-    'longitude': '-122.4148',
-    'short_desc': 'Great mexican food',
+    'latitude': 37.7599,
+    'longitude': -122.4148,
+    'short_desc': 'Artistic neighborhood with excellent food. <a href="/neighborhood/mission">Click to learn more</a>',
     'long_desc': 'Artistic neighborhood with excellent food and live music',
     'median_rent': '$2,600',
     'median_home_price': '1,000,000',
@@ -47,9 +47,9 @@ neighborhoods = [
     {
     'neighborhood_id': 'japantown',
     'name': 'Japantown',
-    'latitude': '37.7854',
-    'longitude': '-122.4294',
-    'short_desc': 'ramen',
+    'latitude': 37.7854,
+    'longitude': -122.4294,
+    'short_desc': 'Great sushi and ramen. Cherry blossom festival. <a href="/neighborhood/japantown">Click to learn more</a>',
     'long_desc': 'cherry blossom festival',
     'median_rent': '$2,600',
     'median_home_price': '1,000,000',
@@ -61,8 +61,8 @@ neighborhoods = [
 
 neighborhood_id = ""
 name = ""
-latitude = ""
-longitude = ""
+latitude = 0
+longitude = 0
 short_desc = ""
 long_desc = ""
 median_rent = ""

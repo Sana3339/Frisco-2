@@ -1,9 +1,7 @@
 $(document).ready(function() {
   $.get('/neighborhood-details.json', (response) => {
     const neighborhood_array = (response);
-    for (const neighborhood of neighborhood_array) {
-      console.log("neighborhood: ", neighborhood);
-    }
+    console.log(response);
   })
   alert('Click is working!');
 })
@@ -11,14 +9,12 @@ $(document).ready(function() {
 
 function initMap(){
     const options = {
-      zoom:11.95,
+      zoom:12.2,
       center:{lat:37.7618, lng:-122.4432}
   }
 
   //Create new map
-  const map = new google.maps.Map(document.getElementById('map'), options);
-
-
+  const map = new google.maps.Map(document.getElementById('search_map'), options);
 
   function addMarker(props){
      

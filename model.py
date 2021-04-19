@@ -12,8 +12,8 @@ class Neighborhood(db.Model):
 
     neighborhood_id = db.Column(db.String, primary_key=True)
     name = db.Column(db.String, nullable=False, unique=True)
-    latitude = db.Column(db.String, nullable=False, unique=True)
-    longitude = db.Column(db.String, nullable=False, unique=True)
+    latitude = db.Column(db.Float, nullable=False, unique=True)
+    longitude = db.Column(db.Float, nullable=False, unique=True)
     short_desc = db.Column(db.Text, nullable=False)
     long_desc = db.Column(db.Text, nullable=False)
     median_rent = db.Column(db.String, nullable=False)

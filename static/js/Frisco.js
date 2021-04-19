@@ -5,7 +5,7 @@
 // Event handlers below:
 //
 $('.enter-site').on('click', () => {
-  window.location.href='/map';
+  window.location.href='/search_map';
 })
 
 $('#find-housing').on('click', () => {
@@ -18,5 +18,5 @@ $('.post-housing').on('click', () => {
 })
 
 $('#back').on('click', () => {
-  window.location.href='/map';
+  window.location.href='/search_map';
 })

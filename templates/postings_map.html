@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} SF Map to Post Housing {% endblock %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="/static/css/maps.css"/>
+
+    <script src="/static/js/postings_map.js"></script>
+
+    <script
+    async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb0ZrGWvOlzV7dfZ_dXRfO5j7UP9Hr46w&callback=initMap2">
+  </script>
+
+  {% endblock %}
+
+    <title>My Google Map</title>
+
+    {% block body %}
+
+  <body>
+    <div id="posting_desc">
+      <h2>Click on the marker closest to the location of the housing you'd like to post</h2>
+    </div>
+    <div id="posting_map"></div>
+
+    {% endblock %}
