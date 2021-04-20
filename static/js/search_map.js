@@ -1,11 +1,4 @@
-$(document).ready(function() {
-  $.get('/neighborhood-details.json', (response) => {
-    const neighborhood_array = (response);
-    console.log(response);
-  })
-  alert('Click is working!');
-})
-
+//Load Google map instance and add neighborhood markers with click and hover interactivity
 
 function initMap(){
     const options = {
@@ -13,9 +6,28 @@ function initMap(){
       center:{lat:37.7618, lng:-122.4432}
   }
 
-  //Create new map
+  //Create new map instance
   const map = new google.maps.Map(document.getElementById('search_map'), options);
 
+  //create an empty list to push marker data onto after fetching from database
+  const neighborhoodMarkers = [];
+
+  //AJAX request to fetch neighborhood data from database
+  $(document).ready(function() {
+    $.get('/neighborhood-details.json', (response) => {
+      const neighborhood_array = (response);
+
+  //creating an array of markers populated with neighborhood data from database
+    for (const neighborhood of neighborhood_array) {
+      const detailsOfNeighborhood = {
+        name: neighborhood.name,
+        coords: {lat:neighborhood.latitude, lng:neighborhood.longitude},
+        short_desc: neighborhood.short_desc
+      };
+      neighborhoodMarkers.push(detailsOfNeighborhood);
+    }
+    
+  
   function addMarker(props){
      
     let marker = new google.maps.Marker({
@@ -23,43 +35,34 @@ function initMap(){
       map:map
    });
 
-    //Check content
-    if(props.content){
+    //Check that the marker has neighborhood data populated and create an info window if so
+    if(props.name){
         let infoWindow = new google.maps.InfoWindow({
-        content: props.content
+        content: props.name
     });
     
+  //When user clicks on a marker, text at the top of the page will be replaced with neighborhood details
+      marker.addListener('click', function(){
+      document.querySelector("#neighborhood-desc")
+      .innerHTML = props.short_desc;
+    });
 
-        marker.addListener('click', function(){
-          infoWindow.open(map, marker);
-        document.querySelector("#neighborhood-desc")
-        .innerHTML = `<h3>This is the ${props.content} district.
-        <a href="/neighborhood/${props.content}">Click to learn more</a>
-        Click on another marker to learn about a different neighborhood.`;
+  //When user hovers over marker, info window with neighborhood name opens
+      marker.addListener('mouseover', function(){
+        infoWindow.open(map, marker);
       });
-      }
-    }       
 
-       // Array of makers
-       let markers = [
-        {
-          coords: {lat:37.8037, lng:-122.4368},
-          content: '<b>Marina</b>'
-          },
-          {
-          coords: {lat:37.7529, lng:-122.4474},
-          content: 'Twin Peaks'
-          },
-          {coords: {lat:37.800415, lng:-122.417612},
-          content: 'Russian Hill'
-          },
-          {coords: {lat:37.7941, lng:-122.4078},
-          content: 'Chinatown'
-          },
-        ];  
+  //When user stops hovering over marker, info window with neighborhood name closes
+      marker.addListener('mouseout', function(){
+        infoWindow.close(map, marker);
+      });
+    }
+  }       
   
-        //loop through markers
-        for(let i=0; i<markers.length; i++){
-          addMarker(markers[i]);
-        };
-    } 
+    //loop through marker data to add markers to Google map
+    for(let i=0; i<neighborhoodMarkers.length; i++){
+      addMarker(neighborhoodMarkers[i]);
+    };
+  })
+ })
+} 

@@ -23,23 +23,23 @@ function initMap2(){
             };
             markers.push(neighborhoodDetails);
           }
-          console.log(markers);
-        
-        alert('Click is working!');
     
     for(var i = 0;i < markers.length; i++){
         addMarker(markers[i]);
     }
     
     function addMarker(props){
-    let marker = new google.maps.Marker({
+      let marker = new google.maps.Marker({
         position:props.coords,
         map:map2
     });
-        marker.addListener('click', function(){
+      marker.addListener('click', function(){
         document.querySelector("#posting_desc")
         .innerHTML = props.short_desc;
     });
+      marker.addListener('mouseover', function(){
+        alert('its working!');
+      });
    }
   })
  })
