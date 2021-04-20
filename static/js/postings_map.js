@@ -44,7 +44,7 @@ function initMap2(){
 
       //When user clicks on a marker, text at top of the page is replaced with neighborhood details
       marker.addListener('click', function(){
-        window.location.href = `/neighborhood/${props.neighborhood_id}`;
+        window.location.href = `/housing/${props.neighborhood_id}`;
     });
       //When user hovers over marker, info window with neighborhood name opens
       marker.addListener('mouseover', function(){
