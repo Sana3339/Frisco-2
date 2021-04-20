@@ -51,7 +51,11 @@ def get_restaurant_website(place_id):
     res = requests.get('https://maps.googleapis.com/maps/api/place/details/json', params=payload)
 
     converted_res = res.json()
-    website = converted_res["result"]["website"]
+    result = converted_res["result"]
+    if result.get('website')!=None:
+        website = converted_res["result"]["website"]
+    else:
+        website = ""
     
     return website
 
@@ -90,7 +94,7 @@ def show_neighborhood(neighborhood_id):
     neighborhood = crud.get_neighborhood_by_id(neighborhood_id)
     images = crud.get_image_for_neighborhood(neighborhood_id)
 
-    name = neighborhood_id
+    name = neighborhood.name
     long_desc = neighborhood.long_desc
     median_home_price = neighborhood.median_home_price
     median_rental = neighborhood.median_rent

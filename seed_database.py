@@ -25,10 +25,10 @@ neighborhoods = [
     'longitude': -122.4368,
     'short_desc': '<h3>Beautiful neighborhood by the water. <a href="/neighborhood/marina">Click to learn more</a></h3>',
     'long_desc': 'Gorgeous neighborhood on the marina with beautiful weather',
-    'median_rent': '$3,100',
-    'median_home_price': '1,200,000',
-    'walk_score': '98',
-    'transit_score': '75',
+    'median_rent': 2460,
+    'median_home_price': 0,
+    'walk_score': 98,
+    'transit_score': 75,
     'images': '/static/img/marina1.jpeg, /static/img/marina2.jpeg, /static/img/marina3.jpeg'
     },
     {
@@ -38,10 +38,10 @@ neighborhoods = [
     'longitude': -122.4148,
     'short_desc': 'Artistic neighborhood with excellent food. <a href="/neighborhood/mission">Click to learn more</a>',
     'long_desc': 'Artistic neighborhood with excellent food and live music',
-    'median_rent': '$2,600',
-    'median_home_price': '1,000,000',
-    'walk_score': '99',
-    'transit_score': '85',
+    'median_rent': 2911,
+    'median_home_price': 0,
+    'walk_score': 99,
+    'transit_score': 85,
     'images': '/static/img/mission1.jpg, /static/img/mission2.jpeg, /static/img/mission3.jpeg'        
     },
     {
@@ -51,12 +51,77 @@ neighborhoods = [
     'longitude': -122.4294,
     'short_desc': 'Great sushi and ramen. Cherry blossom festival. <a href="/neighborhood/japantown">Click to learn more</a>',
     'long_desc': 'cherry blossom festival',
-    'median_rent': '$2,600',
-    'median_home_price': '1,000,000',
-    'walk_score': '99',
-    'transit_score': '85',
+    'median_rent': 0,
+    'median_home_price': 0,
+    'walk_score': 99,
+    'transit_score': 85,
     'images': '/static/img/japantown1.jpeg, /static/img/japantown2.jpeg, /static/img/japantown3.jpeg'        
-    }        
+    },
+    {
+    'neighborhood_id': 'bernal',
+    'name': 'Bernal Heights',
+    'latitude': 37.7389,
+    'longitude': -122.4152,
+    'short_desc': 'Will fill in later. <a href="/neighborhood/bernal">Click to learn more</a>',
+    'long_desc': 'Will fill in later',
+    'median_rent': 2704,
+    'median_home_price': 0,
+    'walk_score': 89,
+    'transit_score': 77,
+    'images': ''        
+    },
+    {
+    'neighborhood_id': 'castro',
+    'name': 'Castro',
+    'latitude': 37.7609,
+    'longitude': -122.435,
+    'short_desc': 'Will fill in later. <a href="/neighborhood/castro">Click to learn more</a>',
+    'long_desc': 'Will fill in later',
+    'median_rent': 0,
+    'median_home_price': 0,
+    'walk_score': 99,
+    'transit_score': 95,
+    'images': ''        
+    },
+    {
+    'neighborhood_id': 'chinatown',
+    'name': 'Chinatown',
+    'latitude': 37.7941,
+    'longitude': -122.4078,
+    'short_desc': 'Will fill in later. <a href="/neighborhood/chinatown">Click to learn more</a>',
+    'long_desc': 'Will fill in later',
+    'median_rent': 0,
+    'median_home_price': 0,
+    'walk_score': 99,
+    'transit_score': 95,
+    'images': ''        
+    },
+    {
+    'neighborhood_id': 'diamond',
+    'name': 'Diamond Heights',
+    'latitude': 37.7424,
+    'longitude': -122.4425,
+    'short_desc': 'Will fill in later. <a href="/neighborhood/diamond">Click to learn more</a>',
+    'long_desc': 'Will fill in later',
+    'median_rent': 2999,
+    'median_home_price': 0,
+    'walk_score': 74,
+    'transit_score': 67,
+    'images': ''        
+    },
+    {
+    'neighborhood_id': 'civic',
+    'name': 'Civic Center',
+    'latitude': 37.7941,
+    'longitude': -122.4078,
+    'short_desc': 'Will fill in later. <a href="/neighborhood/chinatown">Click to learn more</a>',
+    'long_desc': 'Will fill in later',
+    'median_rent': 2388,
+    'median_home_price': 0,
+    'walk_score': 0,
+    'transit_score': 0,
+    'images': ''        
+    }
 ]
 
 neighborhood_id = ""
