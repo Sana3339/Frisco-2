@@ -19,9 +19,11 @@ function initMap2(){
             const neighborhoodDetails = {
                 name: neighborhood.name,
                 coords: {lat:neighborhood.latitude, lng:neighborhood.longitude},
-                short_desc: neighborhood.short_desc
+                short_desc: neighborhood.short_desc,
+                neighborhood_id: neighborhood.neighborhood_id
             };
             markers.push(neighborhoodDetails);
+            console.log(neighborhoodDetails);
           }
     
     for(var i = 0;i < markers.length; i++){
@@ -29,17 +31,30 @@ function initMap2(){
     }
     
     function addMarker(props){
+      
       let marker = new google.maps.Marker({
         position:props.coords,
         map:map2
     });
-      marker.addListener('click', function(){
-        document.querySelector("#posting_desc")
-        .innerHTML = props.short_desc;
-    });
-      marker.addListener('mouseover', function(){
-        alert('its working!');
+
+      //Create info windows for markers
+      let infoWindow = new google.maps.InfoWindow({
+        content: props.name
       });
+
+      //When user clicks on a marker, text at top of the page is replaced with neighborhood details
+      marker.addListener('click', function(){
+        window.location.href = `/neighborhood/${props.neighborhood_id}`;
+    });
+      //When user hovers over marker, info window with neighborhood name opens
+      marker.addListener('mouseover', function(){
+        infoWindow.open(map2, marker);
+      });
+
+    //When user stops hovering over marker, info window with neighborhood name closes
+      marker.addListener('mouseout', function(){
+        infoWindow.close(map2, marker);
+    });
    }
   })
  })

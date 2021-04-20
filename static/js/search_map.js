@@ -27,7 +27,7 @@ function initMap(){
       neighborhoodMarkers.push(detailsOfNeighborhood);
     }
     
-  
+  //This function adds the neighborhood markers, info windows and click/mouseover events
   function addMarker(props){
      
     let marker = new google.maps.Marker({
@@ -35,10 +35,9 @@ function initMap(){
       map:map
    });
 
-    //Check that the marker has neighborhood data populated and create an info window if so
-    if(props.name){
-        let infoWindow = new google.maps.InfoWindow({
-        content: props.name
+  //Create info windows for markers
+    let infoWindow = new google.maps.InfoWindow({
+    content: props.name
     });
     
   //When user clicks on a marker, text at the top of the page will be replaced with neighborhood details
@@ -55,8 +54,7 @@ function initMap(){
   //When user stops hovering over marker, info window with neighborhood name closes
       marker.addListener('mouseout', function(){
         infoWindow.close(map, marker);
-      });
-    }
+    });
   }       
   
     //loop through marker data to add markers to Google map
