@@ -159,12 +159,17 @@ def show_user_profile(user_email):
 
     return render_template('user_profile.html', name=name)
 
-
-@app.route('/login')
+@app.route('/login/')
 def show_login():
     """Displays the account creation and log in page"""
 
     return render_template("login.html")
+
+@app.route('/login/<neighborhood_id>')
+def show_login_from_neighborhood(neighborhood_id):
+    """Login form while persisting the neighborhood_id that the user came from."""
+
+    return render_template("login.html", neighborhood_id=neighborhood_id)
 
 
 @app.route('/users', methods=["POST"])
@@ -205,11 +210,40 @@ def handle_login():
         return redirect('/login')
 
 
+@app.route('/check_login')
+def check_login_at_intro():
+    """Check if the user is logged in. If so, redirect to neighborhood selection map page. 
+        If not, redirect to login page."""
+
+    if session.get('current_user') is None:
+        return redirect('/login')
+    
+    else:
+        return redirect(f'/postings_map')
+
+@app.route('/check_login/<neighborhood_id>')
+def check_login_with_neighborhood(neighborhood_id):
+    """Check if the user is logged in. If so, redirect to neighborhood posting page. 
+        If not, redirect to login page."""
+
+    if session.get('current_user') is None:
+        session['neighborhood_id'] = neighborhood_id
+        return redirect('/login')
+    
+    else:
+        return redirect(f'/post_housing/{neighborhood_id}')
+
+
 @app.route('/success_login')
 def show_after_login():
     """Upon login, users can post housing or visit their profile page."""
 
-    return render_template('success_login.html')
+    if session.get('neighborhood_id') is not None:
+        neighborhood_id = session['neighborhood_id']
+        return redirect(f'/post_housing/{neighborhood_id}')
+
+    else:
+        return render_template('success_login.html')
 
 
 @app.route('/post_housing/<neighborhood_id>')

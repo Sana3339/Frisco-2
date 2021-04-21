@@ -36,7 +36,12 @@
      </ul>
       {% endfor %}
 
-    <a href="/housing/{{ neighborhood_id }}">Find {{ name }} housing</a>
+      <p>
+        <a href="/housing/{{ neighborhood_id }}">Find {{ name }} housing</a>
+      </p>
+      <p>
+        <a href="/check_login/{{ neighborhood_id }}">Post {{ name }} housing</a>
+      </p>
     <p>
       <a href="/search_map">Back</a>
     </p>
