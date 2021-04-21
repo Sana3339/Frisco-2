@@ -112,8 +112,8 @@ neighborhoods = [
     {
     'neighborhood_id': 'civic',
     'name': 'Civic Center',
-    'latitude': 37.7941,
-    'longitude': -122.4078,
+    'latitude': 37.7816,
+    'longitude': -122.4156,
     'short_desc': 'Will fill in later. <a href="/neighborhood/chinatown">Click to learn more</a>',
     'long_desc': 'Will fill in later',
     'median_rent': 2388,

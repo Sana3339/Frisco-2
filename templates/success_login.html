@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Login Success {% endblock %}
+
+{% block body %}
+
+    Login Success!
+
+    Current user is: {{ session['current_user'] }}
+
+    <a href="/profile/{{ session['current_user'] }}">Go to profile page</a>
+    <a href="/postings_map">Post housing</a>
+    
+{% endblock %}

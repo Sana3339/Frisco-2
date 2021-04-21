@@ -15,11 +15,6 @@ app.jinja_env.undefined = StrictUndefined
 
 GOOG_API_KEY = os.environ['GOOGLE_API_KEY']
 
-#hardcoding a neighborhood and place_id for testing purposes
-neighborhood = "Marina"
-place_id = "ChIJW5ygw9aAhYARSNqml-xlEQ4"
-
-
 
 @app.route('/')
 def homepage():
@@ -42,7 +37,7 @@ def show_postings_map():
 
 @app.route('/api/website.json/<place_id>')
 def get_restaurant_website(place_id):
-    """Send restaurant id to Google Places Search to get website link."""
+    """Send restaurant id to Google Places Search API to get restaurant website link."""
     
     payload = {"key": GOOG_API_KEY,
                 "place_id": place_id,
@@ -62,7 +57,7 @@ def get_restaurant_website(place_id):
 
 @app.route('/restaurants/<neighborhood_id>')
 def show_restaurant_details(neighborhood_id):
-    """Show a list of restaurants"""
+    """Show a list of restaurants in a specific neighborhood"""
 
     payload = {"query": f"restaurants in {neighborhood_id}",
                 "key": GOOG_API_KEY}
@@ -120,13 +115,17 @@ def show_housing(neighborhood_id):
     """Show housing posted for a neighborhood."""
 
     postings = crud.get_postings(neighborhood_id)
+    neighborhood = crud.get_neighborhood_by_id(neighborhood_id)
+
+    name = neighborhood.name
 
     return render_template('housing.html', postings=postings,
-                                            neighborhood_id=neighborhood_id)
+                                            name=name)
 
 
 @app.route('/neighborhood-details.json')
 def get_neighborhood_details():
+    """Return specific neighborhood details to populate Google map."""
 
     neighborhoods_obj = crud.get_all_neighborhoods()
 
@@ -151,24 +150,13 @@ def get_neighborhood_details():
     
     return jsonify(all_neighborhood_details)
 
+@app.route('/profile/<user_email>')
+def show_user_profile(user_email):
+    """Show user's profile page including their listed housing."""
 
-#------------------------------------------#
-@app.route('/movies')
-def show_movies():
-    """List all movies"""
+    name = user_email.rsplit("@")[0].title()
 
-    movies = crud.get_movies()
-
-    return render_template("all_movies.html", movies=movies)
-
-
-@app.route('/users')
-def show_users():
-    """List details of all users."""
-
-    users = crud.get_users()
-
-    return render_template("users.html", users=users)
+    return render_template('user_profile.html', name=name)
 
 
 @app.route('/login')
@@ -206,10 +194,9 @@ def handle_login():
     user = crud.get_user_by_email(email)
 
     if user and user.password == password:
-        session['current_user'] = user.user_id
-        flash(f'Login Success {email}')
+        session['current_user'] = email
 
-        return redirect('/')
+        return redirect('/success_login')
             
     else:
 
@@ -217,14 +204,21 @@ def handle_login():
         return redirect('/login')
 
 
-@app.route('/movies/<movie_id>')
-def show_movie_details(movie_id):
-    """List details of a particular movie given its movie_id"""
+@app.route('/success_login')
+def show_after_login():
+    """Upon login, users can post housing or visit their profile page."""
 
-    movie = crud.get_movie_by_id(movie_id)
+    return render_template('success_login.html')
 
-    return render_template("movie_details.html", movie=movie)
 
+@app.route('/post_housing/<neighborhood_id>')
+def post_housing(neighborhood_id):
+    "Display form for logged in user to post available housing."
+
+    neighborhood = crud.get_neighborhood_by_id(neighborhood_id)
+    name = neighborhood.name
+
+    return render_template('post_housing.html', name=name)
 
 
 
