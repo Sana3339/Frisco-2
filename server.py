@@ -107,7 +107,8 @@ def show_neighborhood(neighborhood_id):
                             walk_score=walk_score,
                             transit_score=transit_score,
                             restaurant_data=restaurant_data,
-                            images=neighborhood_images
+                            images=neighborhood_images,
+                            neighborhood_id=neighborhood_id
                             )
 
 @app.route('/housing/<neighborhood_id>')
