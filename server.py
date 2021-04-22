@@ -151,15 +151,15 @@ def get_neighborhood_details():
     
     return jsonify(all_neighborhood_details)
 
-@app.route('/profile/<user_email>')
-def show_user_profile(user_email):
+@app.route('/profile/<email>')
+def show_user_profile(email):
     """Show user's profile page including their listed housing."""
 
-    name = user_email.rsplit("@")[0].title()
+    name = email.rsplit("@")[0].title()
 
     return render_template('user_profile.html', name=name)
 
-@app.route('/login/')
+@app.route('/login')
 def show_login():
     """Displays the account creation and log in page"""
 
@@ -223,8 +223,11 @@ def check_login_at_intro():
 
 @app.route('/check_login/<neighborhood_id>')
 def check_login_with_neighborhood(neighborhood_id):
-    """Check if the user is logged in. If so, redirect to neighborhood posting page. 
-        If not, redirect to login page."""
+    """If user clicks on 'post housing' link from a neighborhood details page, 
+    check if the user is logged in. If so, redirect to neighborhood posting page. 
+    If not, redirect to login page and add neighborhood_id to the session so that user 
+    is redirected to neighborhood posting page immediately after login (bypassing the map 
+    neighborhood selection page)."""
 
     if session.get('current_user') is None:
         session['neighborhood_id'] = neighborhood_id
@@ -243,8 +246,21 @@ def show_after_login():
         return redirect(f'/post_housing/{neighborhood_id}')
 
     else:
-        return render_template('success_login.html')
+        email = session['current_user']
+        return redirect(f'/profile/{email}')
 
+@app.route('/log_out')
+def log_out_user():
+    
+    if session.get('current_user') is None:
+        flash('You are not currently logged in.')
+        return redirect('/login')
+
+    else:
+        session.pop('current_user')
+        flash('You have been logged out.')
+        return redirect('/login')
+    
 
 @app.route('/post_housing/<neighborhood_id>')
 def post_housing(neighborhood_id):
