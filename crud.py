@@ -60,10 +60,10 @@ def get_user_by_email(email):
     return User.query.filter(User.email == email).first()
 
 
-def create_posting(neighborhood_id, user_email, date, title, desc, contact_info):
+def create_posting(neighborhood_id, email, date, title, desc, contact_info):
     
     posting = Posting(neighborhood_id=neighborhood_id,
-                        user_email=user_email,
+                        user_email=email,
                         date=date,
                         title=title,
                         desc=desc,

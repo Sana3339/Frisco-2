@@ -2,12 +2,14 @@
 
 from flask import (Flask, render_template, request, flash, session, redirect, jsonify)
 from model import connect_to_db
+from jinja2 import StrictUndefined
+from datetime import datetime
 import requests
 import os
 import crud
 import json
 
-from jinja2 import StrictUndefined
+
 
 app = Flask(__name__)
 app.secret_key = "dev"
@@ -280,22 +282,36 @@ def log_out_user():
 
     else:
         session.pop('current_user')
-        session.pop('neighborhood_id')
         flash('You have been logged out.')
         return redirect('/login')
     
-#This route collects data from users wanting to post housing in a particular
-#neighborhood via a form.
+#This route displas a from to users wanting to post housing in a particular
+#neighborhood.
 @app.route('/post_housing/<neighborhood_id>')
 def post_housing(neighborhood_id):
     "Display form for logged in user to post available housing."
 
     neighborhood = crud.get_neighborhood_by_id(neighborhood_id)
     name = neighborhood.name
+    session['neighborhood_id'] = neighborhood.neighborhood_id
 
     return render_template('post_housing.html', name=name)
 
+#This route reads information from the posting form and saves in the database.
+@app.route('/handle_posting', methods=['POST'])
+def handle_posting():
+    """Collects data from post housing form and posts to the database."""
+    
+    neighborhood_id = session['neighborhood_id']
+    email = session['current_user']
+    date = datetime.now()
+    title = request.form.get("title")
+    desc = request.form.get("desc")
+    contact_info = request.form.get("contact_info")
 
+    crud.create_posting(neighborhood_id, email, date, title, desc, contact_info)
+    
+    return redirect(f'housing/{neighborhood_id}')
 
 if __name__ == '__main__':
     connect_to_db(app)

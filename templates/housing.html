@@ -8,14 +8,11 @@
 {% block body %}
 
   <h1>{{ name }} housing </h1>
-
-  **for testing purposes: Postings will go here***
   
   {% for posting in postings %}
     <div>
-      {{ posting.date }}<h3>{{ posting.title }} </h3>
-        <p> {{ posting.desc}}</p>
-        <p> {{ posting.contact_info}}</p>
+      <h3> {{ posting.date.strftime('%m-%d-%y') }}  {{ posting.title }} </h3>
+        <p> {{ posting.desc}} {{ posting.contact_info}}</p>
     </div>
 
   {% endfor %}

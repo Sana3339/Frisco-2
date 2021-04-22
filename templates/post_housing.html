@@ -9,6 +9,24 @@
     <p>Post housing in {{ name }}:</p>
   
     <p>Create form here and pass in neighborhood_id</p>
+
+        <form action="/handle_posting" method="POST">
+           <p>
+               Posting Title: <input type="text" name="title"> 
+           </p>
+           <p>
+                Posting Description <textarea name="desc"></textarea>
+           </p>
+           <p>
+                How should interested parties contact you? 
+                <textarea name="contact_info"></textarea>
+            </p>
+           <p>
+            <form action="/handle_posting" method="POST">
+             <button type="submit">Submit
+             </button>
+           </form>
+         </form>
      
     <a href="/postings_map">Post in a different neighborhood</a>
 
