@@ -19,11 +19,58 @@ model.db.create_all()
 
 neighborhoods = [
     {
+    'neighborhood_id': 'bernal',
+    'name': 'Bernal Heights',
+    'latitude': 37.7389,
+    'longitude': -122.4152,
+    'short_desc': """A primarily residential neighborhood with a commercial strip and
+    a farmer's market every Saturday. It's starting to become more gentrified but it's not
+    as gentrified yet as adjacent neighborhoods. <a href="/neighborhood/bernal">Click to learn more</a>""",
+    'long_desc': """"The neighborhood is primary residential with a commercial strip along
+    Corland Ave featuring restaurants, bars, bakeries, a fish and butchery shop and more.
+    It's home to the open-air Alemany Farmers' Market, one of the oldest extant farmers' 
+    markets in the US.  Bernal has not gentrified to the extent of its neighbor Noe Valley,
+    but gentrification and property values are increasing as urban professionals replace working-class
+    home owners and renters""",
+    'median_rent': 2704,
+    'median_home_price': 0,
+    'walk_score': 89,
+    'transit_score': 77,
+    'images': ''        
+    },
+    {
+    'neighborhood_id': 'castro',
+    'name': 'Castro',
+    'latitude': 37.7609,
+    'longitude': -122.435,
+    'short_desc': """The Castro was one of the first gay neighborhoods in the US. Having transformed
+    from a working-class neighborhood, it remains one of the most prominent symbols of lesbian, gay,
+    bisexual and transgender (LGBT) activism and events in the world. 
+    <a href="/neighborhood/castro">Click to learn more</a>""",
+    'long_desc': """The Castro was one of the first gay neighborhoods in the US. One of its more
+                    notable features is Castro Theatre, a movie palace built in 1922 and one of 
+                    San Francisco's premier movie houses. 18th and Castro is a major intersection 
+                    where many historic events, marches, and protests have taken and continue to take place.
+                    The Castro is a "thriving marketplace for all things gay" meaning everything in the area is 
+                    catered to people who identify with LGBT culture and other associated meanings to the word gay.
+                    There are cafes, the Castro Theater, and many businesses that cater to or openly welcome LGBT consumers. 
+                    These establishments make the Castro an area of high spending and lead to high tourist traffic.""",
+    'median_rent': 0,
+    'median_home_price': 0,
+    'walk_score': 99,
+    'transit_score': 95,
+    'images': ''        
+    },
+    {
     'neighborhood_id': 'marina',
     'name': 'Marina',
     'latitude': 37.8037,
     'longitude': -122.4368,
-    'short_desc': '<h3>Beautiful neighborhood by the water. <a href="/neighborhood/marina">Click to learn more</a></h3>',
+    'short_desc': """The Marina currently has the highest non-Hispanic white resident 
+                    percentage of any recognized neighborhood in San Francisco. It's most famous 
+                    for the Palace of Fine Arts. Chestnut Street is an attraction for locals and tourists, lined with a 
+                    collection of stores to shop, as well as restaurants, bakeries, coffee shops and bars.
+                    <a href="/neighborhood/marina">Click to learn more</a>""",
     'long_desc': 'Gorgeous neighborhood on the marina with beautiful weather',
     'median_rent': 2460,
     'median_home_price': 0,
@@ -36,8 +83,27 @@ neighborhoods = [
     'name': 'Mission',
     'latitude': 37.7599,
     'longitude': -122.4148,
-    'short_desc': 'Artistic neighborhood with excellent food. <a href="/neighborhood/mission">Click to learn more</a>',
-    'long_desc': 'Artistic neighborhood with excellent food and live music',
+    'short_desc': """The Mission has historically been the center of the city's Chicano/Mexican-American 
+            community and it's often warmer and sunnier than other parts of San Francisco.
+            The Valencia corridor and the 24th Street corridor are known for their restaurants,
+            bars, galleries and street life. 
+             <a href="/neighborhood/mission">Click to learn more</a>""",
+    'long_desc': """The Mission has historically been the center of the city's Chicano/Mexican-American community
+                    and is often warmer and sunnier than other parts of San Francisco.
+                    The microclimates of San Francisco create a system by which each neighborhood 
+                    can have different weather at any given time, although this phenomenon tends 
+                    to be less pronounced during the winter months.
+                    The Mission includes four recognized sub-districts. The northeastern 
+                    quadrant, adjacent to Potrero Hill is known as a center for high tech startup
+                     businesses including some chic bars and restaurants. 
+                    The northwest quadrant along Dolores Street is famous for Victorian mansions
+                     and the popular Dolores Park 
+                    at 18th Street. Two main commercial zones, known as the Valencia corridor 
+                    (Valencia St, from about 15th to 22nd) 
+                    and the 24th Street corridor known as Calle 24 in the south central part of 
+                    the Mission District are both very popular destinations
+                     for their restaurants, bars, galleries and street life.
+                 """,
     'median_rent': 2911,
     'median_home_price': 0,
     'walk_score': 99,
@@ -45,82 +111,189 @@ neighborhoods = [
     'images': '/static/img/mission1.jpg, /static/img/mission2.jpeg, /static/img/mission3.jpeg'        
     },
     {
-    'neighborhood_id': 'japantown',
-    'name': 'Japantown',
-    'latitude': 37.7854,
-    'longitude': -122.4294,
-    'short_desc': 'Great sushi and ramen. Cherry blossom festival. <a href="/neighborhood/japantown">Click to learn more</a>',
-    'long_desc': 'cherry blossom festival',
+    'neighborhood_id': 'financial',
+    'name': 'Financial District',
+    'latitude': 37.7946,
+    'longitude': -122.3999,
+    'short_desc': """The Financial District serves as San Francisco's main central business district.
+                    It's home to the city's largest concentration of corporate headquarters, law firms,
+                    insurance companies, real estate firms and other financial institutions.
+                     <a href="/neighborhood/financial">Click to learn more</a>""",
+    'long_desc': """"The Financial District serves as San Francisco's main central business district.
+                 All 6 San Francisco Fortune 500 companies are located in the district.  The area is
+                marked by a cluster of high-rise towers and several shopping malls including the
+                Ferry Building Marketplace where a farmer's market is held every Saturday.
+                """,
     'median_rent': 0,
     'median_home_price': 0,
     'walk_score': 99,
-    'transit_score': 85,
-    'images': '/static/img/japantown1.jpeg, /static/img/japantown2.jpeg, /static/img/japantown3.jpeg'        
+    'transit_score': 100,
+    'images': ''   
     },
     {
-    'neighborhood_id': 'bernal',
-    'name': 'Bernal Heights',
-    'latitude': 37.7389,
-    'longitude': -122.4152,
-    'short_desc': 'Will fill in later. <a href="/neighborhood/bernal">Click to learn more</a>',
-    'long_desc': 'Will fill in later',
-    'median_rent': 2704,
+    'neighborhood_id': 'nob',
+    'name': 'Nob Hill',
+    'latitude': 37.7930,
+    'longitude': -122.4161,
+    'short_desc': """
+                     <a href="/neighborhood/nob">Click to learn more</a>""",
+    'long_desc': """"
+                """,
+    'median_rent': 2491,
+    'median_home_price': 0,
+    'walk_score': 99,
+    'transit_score': 100,
+    'images': ''   
+    },
+    {
+    'neighborhood_id': 'noe',
+    'name': 'Noe Valley',
+    'latitude': 37.7502,
+    'longitude': -122.4337,
+    'short_desc': """
+                     <a href="/neighborhood/noe">Click to learn more</a>""",
+    'long_desc': """"
+                """,
+    'median_rent': 2815,
+    'median_home_price': 0,
+    'walk_score': 92,
+    'transit_score': 73,
+    'images': ''   
+    },
+    {
+    'neighborhood_id': 'north',
+    'name': 'North Beach',
+    'latitude': 37.8061,
+    'longitude': -122.4103,
+    'short_desc': """
+                     <a href="/neighborhood/north">Click to learn more</a>""",
+    'long_desc': """"
+                """,
+    'median_rent': 2814,
+    'median_home_price': 0,
+    'walk_score': 99,
+    'transit_score': 95,
+    'images': ''   
+    },
+    {
+    'neighborhood_id': 'pac',
+    'name': 'Pacific Heights',
+    'latitude': 37.7925,
+    'longitude': -122.4382,
+    'short_desc': """
+                     <a href="/neighborhood/pac">Click to learn more</a>""",
+    'long_desc': """"
+                """,
+    'median_rent': 2512,
+    'median_home_price': 0,
+    'walk_score': 96,
+    'transit_score': 89,
+    'images': ''   
+    },
+    {
+    'neighborhood_id': 'potrero',
+    'name': 'Potrero Hill',
+    'latitude': 37.7605,
+    'longitude': -122.4009,
+    'short_desc': """
+                     <a href="/neighborhood/potrero">Click to learn more</a>""",
+    'long_desc': """"
+                """,
+    'median_rent': 2992,
     'median_home_price': 0,
     'walk_score': 89,
+    'transit_score': 75,
+    'images': ''   
+    },
+    {
+    'neighborhood_id': 'presidio',
+    'name': 'Presidio',
+    'latitude': 37.7989,
+    'longitude': -122.4662,
+    'short_desc': """
+                     <a href="/neighborhood/presidio">Click to learn more</a>""",
+    'long_desc': """"
+                """,
+    'median_rent': 4738,
+    'median_home_price': 0,
+    'walk_score': 41,
+    'transit_score': 59,
+    'images': ''   
+    },
+    {
+    'neighborhood_id': 'richmond',
+    'name': 'Inner Richmond',
+    'latitude': 37.7781,
+    'longitude': -122.4673,
+    'short_desc': """
+                     <a href="/neighborhood/richmond">Click to learn more</a>""",
+    'long_desc': """"
+                """,
+    'median_rent': 3205,
+    'median_home_price': 0,
+    'walk_score': 94,
     'transit_score': 77,
-    'images': ''        
+    'images': ''   
     },
     {
-    'neighborhood_id': 'castro',
-    'name': 'Castro',
-    'latitude': 37.7609,
-    'longitude': -122.435,
-    'short_desc': 'Will fill in later. <a href="/neighborhood/castro">Click to learn more</a>',
-    'long_desc': 'Will fill in later',
-    'median_rent': 0,
+    'neighborhood_id': 'russian',
+    'name': 'Russian Hill',
+    'latitude': 37.8011,
+    'longitude': 122.4194,
+    'short_desc': """
+                     <a href="/neighborhood/russian">Click to learn more</a>""",
+    'long_desc': """"
+                """,
+    'median_rent': 2489,
     'median_home_price': 0,
-    'walk_score': 99,
-    'transit_score': 95,
-    'images': ''        
+    'walk_score': 97,
+    'transit_score': 93,
+    'images': ''   
     },
     {
-    'neighborhood_id': 'chinatown',
-    'name': 'Chinatown',
-    'latitude': 37.7941,
-    'longitude': -122.4078,
-    'short_desc': 'Will fill in later. <a href="/neighborhood/chinatown">Click to learn more</a>',
-    'long_desc': 'Will fill in later',
-    'median_rent': 0,
+    'neighborhood_id': 'soma',
+    'name': 'SoMA',
+    'latitude': 37.7785,
+    'longitude': -122.4056,
+    'short_desc': """
+                     <a href="/neighborhood/soma">Click to learn more</a>""",
+    'long_desc': """"
+                """,
+    'median_rent': 2992,
     'median_home_price': 0,
-    'walk_score': 99,
-    'transit_score': 95,
-    'images': ''        
-    },
+    'walk_score': 97,
+    'transit_score': 100,
+    'images': ''   
+    }, 
     {
-    'neighborhood_id': 'diamond',
-    'name': 'Diamond Heights',
-    'latitude': 37.7424,
-    'longitude': -122.4425,
-    'short_desc': 'Will fill in later. <a href="/neighborhood/diamond">Click to learn more</a>',
-    'long_desc': 'Will fill in later',
-    'median_rent': 2999,
+    'neighborhood_id': 'sunset',
+    'name': 'Inner Sunset',
+    'latitude': 37.7602,
+    'longitude': -122.4703,
+    'short_desc': """
+                     <a href="/neighborhood/sunset">Click to learn more</a>""",
+    'long_desc': """"
+                """,
+    'median_rent': 2813,
     'median_home_price': 0,
-    'walk_score': 74,
-    'transit_score': 67,
-    'images': ''        
-    },
+    'walk_score': 95,
+    'transit_score': 72,
+    'images': ''   
+    }, 
     {
-    'neighborhood_id': 'civic',
-    'name': 'Civic Center',
-    'latitude': 37.7816,
-    'longitude': -122.4156,
-    'short_desc': 'Will fill in later. <a href="/neighborhood/chinatown">Click to learn more</a>',
-    'long_desc': 'Will fill in later',
-    'median_rent': 2388,
+    'neighborhood_id': 'western',
+    'name': 'Western Addition',
+    'latitude': 37.7822,
+    'longitude': -122.4342,
+    'short_desc': """
+                     <a href="/neighborhood/western">Click to learn more</a>""",
+    'long_desc': """"
+                """,
+    'median_rent': 2438,
     'median_home_price': 0,
-    'walk_score': 0,
-    'transit_score': 0,
-    'images': ''        
+    'walk_score': 96,
+    'transit_score': 89,
+    'images': ''   
     }
 ]
 

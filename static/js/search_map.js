@@ -41,12 +41,13 @@ function initMap(){
     content: props.name
     });
     
-  //When user clicks on a marker, text at the top of the page will be replaced with neighborhood details
+  //When user hovers over a marker, text at the top of the page will be replaced with neighborhood details
       marker.addListener('mouseover', function(){
       document.querySelector("#neighborhood-desc")
       .innerHTML = props.short_desc;
     });
 
+  //When user click on a marker, they are taken to the neighborhood details page
       marker.addListener('click', function(){
         window.location.href = `/neighborhood/${props.neighborhood_id}`
     });
@@ -62,7 +63,7 @@ function initMap(){
     });
   }       
   
-    //loop through marker data to add markers to Google map
+    //loop through marker array to add markers to Google map
     for(let i=0; i<neighborhoodMarkers.length; i++){
       addMarker(neighborhoodMarkers[i]);
     };

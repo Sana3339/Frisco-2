@@ -283,6 +283,8 @@ def log_out_user():
     else:
         session.pop('current_user')
         flash('You have been logged out.')
+        if session.get('neighborhood_id') is not None:
+            session.pop('neighborhood_id')
         return redirect('/login')
     
 #This route displas a from to users wanting to post housing in a particular

@@ -2,20 +2,14 @@
 
 {% block body %}
 
-    <p>
-    **For testing purposes**: current user is: {{ session['current_user'] }}
-    </p>
-
-    <p>Post housing in {{ name }}:</p>
-  
-    <p>Create form here and pass in neighborhood_id</p>
+    <h1>{{ name }} housing:</h1>
 
         <form action="/handle_posting" method="POST">
            <p>
                Posting Title: <input type="text" name="title"> 
            </p>
            <p>
-                Posting Description <textarea name="desc"></textarea>
+                Posting Description: <textarea name="desc"></textarea>
            </p>
            <p>
                 How should interested parties contact you? 
