@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %} Housing Posting {% endblock %}
-
 {% block body %}
 
+    <p>
     **For testing purposes**: current user is: {{ session['current_user'] }}
+    </p>
 
     <p>Post housing in {{ name }}:</p>
   
     <p>Create form here and pass in neighborhood_id</p>
      
-     <button id="postings-map">Back</button>
+    <a href="/postings_map">Post in a different neighborhood</a>
 
 {% endblock %}

@@ -15,26 +15,30 @@ app.jinja_env.undefined = StrictUndefined
 
 GOOG_API_KEY = os.environ['GOOGLE_API_KEY']
 
-
+# This is the first page the user sees when coming to the site
 @app.route('/')
 def homepage():
     """View homepage"""
 
     return render_template("homepage.html")
 
+#This is the second page the user sees upon entering the site. 
+# User can explore neighborhoods or click link to post housing
 @app.route('/search_map')
 def search_map():
     """Show SF neighborhood map"""
 
     return render_template("search_map.html")
 
+#After logging in, users can select which neighborhood to post housing in.
 @app.route('/postings_map')
 def show_postings_map():
     """Show SF neighborhood map for users to select which neighborhood to post housing in."""
 
     return render_template("postings_map.html")
 
-
+#This route calls the Google Places Details API providing a restaurant's 'place_id' and returning the
+#restaurant's website. This website is appended to the restaurant details in the neighborhood pages
 @app.route('/api/website.json/<place_id>')
 def get_restaurant_website(place_id):
     """Send restaurant id to Google Places Search API to get restaurant website link."""
@@ -54,7 +58,8 @@ def get_restaurant_website(place_id):
     
     return website
 
-
+#This route is used for testing purposes to ensure that restaurants for a particular
+#neighborhood are returning properly.
 @app.route('/restaurants/<neighborhood_id>')
 def show_restaurant_details(neighborhood_id):
     """Show a list of restaurants in a specific neighborhood"""
@@ -82,6 +87,10 @@ def show_restaurant_details(neighborhood_id):
 
     return limited_data
 
+
+#This route queries the database for neighborhood-related data and
+#gets restaurant data from the show_restaurant_details() function to 
+#display to the user
 @app.route('/neighborhood/<neighborhood_id>')
 def show_neighborhood(neighborhood_id):
     """Show SF neighborhood details"""
@@ -111,6 +120,8 @@ def show_neighborhood(neighborhood_id):
                             neighborhood_id=neighborhood_id
                             )
 
+#This route queries the database to show the user the posted housing
+#for a particular neighborhood
 @app.route('/housing/<neighborhood_id>')
 def show_housing(neighborhood_id):
     """Show housing posted for a neighborhood."""
@@ -123,7 +134,9 @@ def show_housing(neighborhood_id):
     return render_template('housing.html', postings=postings,
                                             name=name)
 
-
+#This route is used to get neighborhood details from DB to the front end
+#via AJAX requests in the maps JS files. The data is used to populate
+#the map markers, info windows and text on the page
 @app.route('/neighborhood-details.json')
 def get_neighborhood_details():
     """Return specific neighborhood details to populate Google map."""
@@ -151,27 +164,25 @@ def get_neighborhood_details():
     
     return jsonify(all_neighborhood_details)
 
+#This route shows the user what housing they have posted (if any)
 @app.route('/profile/<email>')
 def show_user_profile(email):
     """Show user's profile page including their listed housing."""
 
-    name = email.rsplit("@")[0].title()
+    name = email.rsplit("@")[0]
 
     return render_template('user_profile.html', name=name)
 
+#This route shows the account creation and login page
 @app.route('/login')
 def show_login():
     """Displays the account creation and log in page"""
 
     return render_template("login.html")
 
-@app.route('/login/<neighborhood_id>')
-def show_login_from_neighborhood(neighborhood_id):
-    """Login form while persisting the neighborhood_id that the user came from."""
-
-    return render_template("login.html", neighborhood_id=neighborhood_id)
 
 
+#This route creates a new user via the account creation form
 @app.route('/users', methods=["POST"])
 def register_user():
     """Create a new user."""
@@ -190,6 +201,7 @@ def register_user():
 
     return redirect('/login')
 
+#This route checks if a user is in the database and logs them in if so.
 @app.route('/handle-login', methods=['POST'])
 def handle_login():
     """Logs in an existing user."""
@@ -209,7 +221,9 @@ def handle_login():
         flash('Incorrect try again')
         return redirect('/login')
 
-
+#This route is used in 'search_map' page dispalying which neighborhoods
+#users can learn about.  If users click on the 'post housing' link, this 
+#route checks if they are logged in before allowing them to post housing.
 @app.route('/check_login')
 def check_login_at_intro():
     """Check if the user is logged in. If so, redirect to neighborhood selection map page. 
@@ -221,13 +235,15 @@ def check_login_at_intro():
     else:
         return redirect(f'/postings_map')
 
+#If a user clicks on the 'post housing' link from a neighborhood details page,
+#this route checks if the user is logged in, and if so, redirects them to the
+#specific neighborhood posting page.  If the user isn't logged in, they are 
+#redirected to the login page with the neighborhood_id being added to the session.
+#This allows the user to be redireced to the neighborhood page immediately after
+#login (bypassing the neighborhood selection page)
 @app.route('/check_login/<neighborhood_id>')
 def check_login_with_neighborhood(neighborhood_id):
-    """If user clicks on 'post housing' link from a neighborhood details page, 
-    check if the user is logged in. If so, redirect to neighborhood posting page. 
-    If not, redirect to login page and add neighborhood_id to the session so that user 
-    is redirected to neighborhood posting page immediately after login (bypassing the map 
-    neighborhood selection page)."""
+    """Check if a user is logged in and add their neighborhood_id to the session."""
 
     if session.get('current_user') is None:
         session['neighborhood_id'] = neighborhood_id
@@ -237,6 +253,10 @@ def check_login_with_neighborhood(neighborhood_id):
         return redirect(f'/post_housing/{neighborhood_id}')
 
 
+#Depending on if a user came from the home page or from a specific neighborhood's
+#housing page, upon successful login, they are redirected to the map page to 
+#select a neighborhood to post in or to the specific neighborhood's posting
+#page that they were previously visiting.
 @app.route('/success_login')
 def show_after_login():
     """Upon login, users can post housing or visit their profile page."""
@@ -249,6 +269,8 @@ def show_after_login():
         email = session['current_user']
         return redirect(f'/profile/{email}')
 
+#If a user is logged in, they get logged out. If they aren't logged in,
+#an error message is displayed
 @app.route('/log_out')
 def log_out_user():
     
@@ -258,10 +280,12 @@ def log_out_user():
 
     else:
         session.pop('current_user')
+        session.pop('neighborhood_id')
         flash('You have been logged out.')
         return redirect('/login')
     
-
+#This route collects data from users wanting to post housing in a particular
+#neighborhood via a form.
 @app.route('/post_housing/<neighborhood_id>')
 def post_housing(neighborhood_id):
     "Display form for logged in user to post available housing."

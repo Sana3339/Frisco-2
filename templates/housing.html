@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
-{% block title %} Housing {% endblock %}
-
 {% block head %}
 
 {% endblock %}
@@ -11,6 +9,8 @@
 
   <h1>{{ name }} housing </h1>
 
+  **for testing purposes: Postings will go here***
+  
   {% for posting in postings %}
     <div>
       {{ posting.date }}<h3>{{ posting.title }} </h3>

@@ -22,7 +22,8 @@ function initMap(){
       const detailsOfNeighborhood = {
         name: neighborhood.name,
         coords: {lat:neighborhood.latitude, lng:neighborhood.longitude},
-        short_desc: neighborhood.short_desc
+        short_desc: neighborhood.short_desc,
+        neighborhood_id: neighborhood.neighborhood_id
       };
       neighborhoodMarkers.push(detailsOfNeighborhood);
     }
@@ -41,9 +42,13 @@ function initMap(){
     });
     
   //When user clicks on a marker, text at the top of the page will be replaced with neighborhood details
-      marker.addListener('click', function(){
+      marker.addListener('mouseover', function(){
       document.querySelector("#neighborhood-desc")
       .innerHTML = props.short_desc;
+    });
+
+      marker.addListener('click', function(){
+        window.location.href = `/neighborhood/${props.neighborhood_id}`
     });
 
   //When user hovers over marker, info window with neighborhood name opens

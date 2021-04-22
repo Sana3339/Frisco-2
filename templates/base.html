@@ -12,7 +12,7 @@
     
 
     <title>
-      {% block title %} Neighborhoods {% endblock %}
+       Frisco
     </title>
 
     {% block head %}{% endblock %}
@@ -23,9 +23,11 @@
     <li><a href="/search_map">Search</a></li>
 
     {% if session['current_user'] is defined %}
-      <li><a href="/log_out">Logout</a></li>
+      <li><a href="/postings_map">Post Housing</a></li>
       <li><a href="/profile/{{ session['current_user'] }}>">Profile</a></li>
+      <li><a href="/log_out">Logout</a></li>
     {% else %}
+      <li><a href="/check_login">Post Housing</a></li>
       <li><a href="/login">Login</a></li>
     {% endif %}
     
