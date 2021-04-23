@@ -9,17 +9,21 @@
     <a href="/log_out">Logout</a>
 </p>
 
-  <h2>Your live posts:</h2>  
+    {% if postings == [] %}
+        You don't currently have any postings.
+  
+    {% else %}
+      <h2>Your live posts:</h2>  
+      {% for posting in postings %}    
+        <h3>{{ posting.title }}</h3>
+        {{ posting.desc }}
+        {{ posting.contact_info }}
+        <p><form action="/delete_posting/{{ posting.posting_id }}" method="POST"></p>
+          <button type="submit">Delete</button>
+          </form>
+      {% endfor %}
 
-  {% for posting in postings %} 
-    <h3>{{ posting.title }}</h3>
-    {{ posting.desc }}
-    {{ posting.contact_info }}
-    <p><form action="/delete_posting/{{ posting.posting_id }}" method="POST"></p>
-      <button type="submit">Delete</button>
-      </form>
-
-    {% endfor %}
+    {% endif %}
 
   {% endblock %}
 
