@@ -38,29 +38,29 @@ function initMap(){
 
   //Create info windows for markers
     let infoWindow = new google.maps.InfoWindow({
-    content: props.name
+    content: props.short_desc
     });
     
   //When user hovers over a marker, text at the top of the page will be replaced with neighborhood details
-      marker.addListener('mouseover', function(){
-      document.querySelector("#neighborhood-desc")
-      .innerHTML = props.short_desc;
-    });
+    //   marker.addListener('mouseover', function(){
+    //   document.querySelector("#neighborhood-desc")
+    //   .innerHTML = props.short_desc;
+    // });
 
   //When user click on a marker, they are taken to the neighborhood details page
-      marker.addListener('click', function(){
+      marker.addListener('dblclick', function(){
         window.location.href = `/neighborhood/${props.neighborhood_id}`
     });
 
   //When user hovers over marker, info window with neighborhood name opens
-      marker.addListener('mouseover', function(){
+      marker.addListener('click', function(){
         infoWindow.open(map, marker);
       });
 
   //When user stops hovering over marker, info window with neighborhood name closes
-      marker.addListener('mouseout', function(){
-        infoWindow.close(map, marker);
-    });
+    //   marker.addListener('mouseout', function(){
+    //     infoWindow.close(map, marker);
+    // });
   }       
   
     //loop through marker array to add markers to Google map

@@ -79,6 +79,12 @@ def get_postings(neighborhood_id):
     
     return postings
 
+def get_user_postings(email):
+
+    postings = Posting.query.filter_by(user_email=email).all()
+
+    return postings
+
 
 def add_image_to_neighborhood(neighborhood_id, image_of_neighborhood):
     """Provided image details, add to neighborhood images table and link to the correct neighborhood."""

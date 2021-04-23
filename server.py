@@ -172,8 +172,10 @@ def show_user_profile(email):
     """Show user's profile page including their listed housing."""
 
     name = email.rsplit("@")[0]
+    postings = crud.get_user_postings(email)
 
-    return render_template('user_profile.html', name=name)
+    return render_template('user_profile.html', name=name,
+                                                postings=postings)
 
 #This route shows the account creation and login page
 @app.route('/login')
