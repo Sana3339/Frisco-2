@@ -317,6 +317,16 @@ def handle_posting():
     
     return redirect(f'housing/{neighborhood_id}')
 
+@app.route('/delete_posting/<posting_id>', methods=['POST'])
+def delete_posting(posting_id):
+    """Deletes the posting that it's attached to when fired."""
+
+    crud.delete_posting(posting_id)
+    email = session['current_user']
+
+    return redirect(f'/profile/{email}')
+
+
 if __name__ == '__main__':
     connect_to_db(app)
     app.run(host='0.0.0.0', debug=True)

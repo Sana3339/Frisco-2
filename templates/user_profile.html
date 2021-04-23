@@ -12,9 +12,12 @@
   <h2>Your live posts:</h2>  
 
   {% for posting in postings %} 
-    <h2>{{ posting.title }}</h2>
+    <h3>{{ posting.title }}</h3>
     {{ posting.desc }}
     {{ posting.contact_info }}
+    <p><form action="/delete_posting/{{ posting.posting_id }}" method="POST"></p>
+      <button type="submit">Delete</button>
+      </form>
 
     {% endfor %}
 

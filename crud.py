@@ -85,6 +85,12 @@ def get_user_postings(email):
 
     return postings
 
+def delete_posting(posting_id):
+
+    posting = Posting.query.get(posting_id)
+    db.session.delete(posting)
+    db.session.commit()
+
 
 def add_image_to_neighborhood(neighborhood_id, image_of_neighborhood):
     """Provided image details, add to neighborhood images table and link to the correct neighborhood."""
