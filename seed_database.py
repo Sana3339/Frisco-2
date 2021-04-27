@@ -58,10 +58,11 @@ neighborhoods = [
                     notable features is Castro Theatre, a movie palace built in 1922 and one of 
                     San Francisco's premier movie houses. 18th and Castro is a major intersection 
                     where many historic events, marches, and protests have taken and continue to take place.
-                    The Castro is a "thriving marketplace for all things gay" meaning everything in the area is 
-                    catered to people who identify with LGBT culture and other associated meanings to the word gay.
-                    There are cafes, the Castro Theater, and many businesses that cater to or openly welcome LGBT consumers. 
-                    These establishments make the Castro an area of high spending and lead to high tourist traffic.""",
+                    The Castro is a "thriving marketplace for all things gay" meaning everything 
+                    in the area is catered to people who identify with LGBT culture and other associated 
+                    meanings to the word gay.  There are cafes, the Castro Theater, and many businesses 
+                    that cater to or openly welcome LGBT consumers. These establishments make the Castro 
+                    an area of high spending and lead to high tourist traffic.""",
     'median_rent': 0,
     'median_home_price': 2645000,
     'sq_ft_price': 1265,
@@ -83,9 +84,7 @@ neighborhoods = [
     'long_desc': """Haight-Ashbury is known as one of the main centers of the 
                     hippie and counterculture of the 1960s. The mainstream media's 
                     coverage of hippie life in the Haight-Ashbury drew the attention 
-                    of youth from all over America. Hunter S. Thompson labeled the 
-                    district "Hashbury" in The New York Times Magazine, and the 
-                    activities in the area were reported almost daily. The Haight-Ashbury 
+                    of youth from all over America. The Haight-Ashbury 
                     district was sought out by hippies to constitute a community based 
                     upon counterculture ideals, drugs, and music. This neighborhood 
                     offered a concentrated gathering spot for hippies to create a social 
@@ -107,9 +106,13 @@ neighborhoods = [
                     The <b>Marina</b> has the highest non-Hispanic white resident percentage of any neighborhood in SF. 
                     Chestnut Street is an attraction, lined with stores, restaurants, coffee shops and bars.
                     <a href="/neighborhood/marina">Click here to learn more.</a>""",
-    'long_desc': """Gorgeous neighborhood on the marina with beautiful weather.
-                    It's most famous for the Palace of Fine Arts.
-                    """,
+    'long_desc': """The Marina is most famous for the Palace of Fine Arts, which is a year-round attraction
+                    for tourists and locals and is used as a location for weddings and wedding-related photography.
+
+                    The neighborhood is also noted for its demographics, which since the 1980s have shifted 
+                    from mostly middle-class families and pensioners to professionals in their twenties 
+                    and thirties. These now make up more than half of the population, although a small, 
+                    affluent older population remains""",
     'median_rent': 2460,
     'median_home_price': 4296000,
     'sq_ft_price': 1394,
@@ -127,22 +130,12 @@ neighborhoods = [
                     The <b>Mission</b> has been the center of the city's Chicano/Mexican-American community
                     and is often warmer and sunnier than other parts of the city.
                     <a href="/neighborhood/mission">Click here to learn more.</a>""",
-    'long_desc': """The Mission has historically been the center of the city's Chicano/Mexican-American community
-                    and is often warmer and sunnier than other parts of San Francisco.
-                    The microclimates of San Francisco create a system by which each neighborhood 
-                    can have different weather at any given time, although this phenomenon tends 
-                    to be less pronounced during the winter months.
-                    The Mission includes four recognized sub-districts. The northeastern 
-                    quadrant, adjacent to Potrero Hill is known as a center for high tech startup
-                     businesses including some chic bars and restaurants. 
-                    The northwest quadrant along Dolores Street is famous for Victorian mansions
-                     and the popular Dolores Park 
-                    at 18th Street. Two main commercial zones, known as the Valencia corridor 
-                    (Valencia St, from about 15th to 22nd) 
-                    and the 24th Street corridor known as Calle 24 in the south central part of 
-                    the Mission District are both very popular destinations
-                     for their restaurants, bars, galleries and street life.
-                 """,
+    'long_desc': """The Mission includes four recognized sub-districts. The northeastern 
+                    quadrant is known as a center for high tech startup businesses including some 
+                    chic bars and restaurants. The northwest quadrant is famous for Victorian mansions
+                    and the popular Dolores Park. Two main commercial zones in the south central part of 
+                    the Mission District are both popular destinationsfor their restaurants, bars, 
+                    galleries and street life.""",
     'median_rent': 2911,
     'median_home_price': 1765000,
     'sq_ft_price': 967,
@@ -161,11 +154,14 @@ neighborhoods = [
                     It's home to the city's largest concentration of corporate headquarters, law firms,
                     real estate firms and other financial institutions.
                     <a href="/neighborhood/financial">Click here to learn more.</a>""",
-    'long_desc': """The Financial District serves as San Francisco's main central business district.
-                 All 6 San Francisco Fortune 500 companies are located in the district.  The area is
-                marked by a cluster of high-rise towers and several shopping malls including the
-                Ferry Building Marketplace where a farmer's market is held every Saturday.
-                """,
+    'long_desc': """The Financial District is home to numerous corporate headquarters including
+                    6 Fortune 500 companies.  The area is marked by a cluster of high-rise towers 
+                    and several shopping malls including the Ferry Building Marketplace where a 
+                    farmer's market is held every Saturday.  
+
+                    The Financial District is served by more than two dozen Muni bus and rail lines, 
+                    including one cable car line, as well as Montgomery Street Station and 
+                    Embarcadero Station in the BART system.""",
     'median_rent': 0,
     'median_home_price': 1599000,
     'sq_ft_price': 1283,
@@ -183,14 +179,13 @@ neighborhoods = [
                     <b>Nob Hill</b> is known for its numerous luxury hotels and historic mansions.
                     It has historically served as a center of San Francisco's upper class.
                     <a href="/neighborhood/nob">Click here to learn more.</a>""",
-    'long_desc': """Nob Hill is known for its numerous luxury hotels and historic mansions.
-                    It has historically served as a center of San Francisco's upper class.
-                    It's among the highest-income neighborhoods in the US as well as one
-                    of the most desirable and expensive real estate markets in the country.
-
-                    Nob Hill is a luxury destination in San Francisco, owing to its numerous
+    'long_desc': """Nob Hill is among the highest-income neighborhoods in the US as well as one
+                    of the most desirable and expensive real estate markets in the country. 
+                    It's a luxury destination in San Francisco, owing to its numerous
                     Michelin-starred restaurants, boutiques, cultural institutions, art galleries,
-                    and historic landmarks.""",
+                    and historic landmarks. It's home to many of the city's upper class families
+                    as well as a large young urban professional population and a growing Chinese
+                    immigrant population from Chinatown to the east.""",
     'median_rent': 2491,
     'median_home_price': 1280000,
     'sq_ft_price': 1149,
@@ -209,18 +204,14 @@ neighborhoods = [
                     couples with children and is known as 'Stroller Valley'. Its microclimate is 
                     sunnier and warmer than other neighborhoods. 
                     <a href="/neighborhood/noe">Click here to learn more.</a>""",
-    'long_desc': """Noe Valley started out as a working-class neighborhood for employees and 
-                    their families in the area's once-thriving blue-collar economy. 
-                    Since 1980 it has undergone successive waves 
-                    of gentrification and is now considered an upper-middle class/wealthy 
-                    neighborhood. It is home to many urban professionals, particularly young 
+    'long_desc': """Noe Valley started is considered an upper-middle class/wealthy 
+                    neighborhood. It's home to many urban professionals, particularly young 
                     couples with children. It is colloquially known as Stroller Valley, 
                     for the many strollers in the neighborhood. 
                     One of the attractions of Noe Valley is that the adjacent 
                     Twin Peaks partly blocks the coastal fog and cool winds from the 
                     Pacific, making the microclimate usually sunnier and warmer than 
-                    surrounding neighborhoods.
-                """,
+                    surrounding neighborhoods.""",
     'median_rent': 2815,
     'median_home_price': 2800000,
     'sq_ft_price': 1383,
@@ -240,7 +231,13 @@ neighborhoods = [
                     residential neighborhood populated with young urban professionals, 
                     families, and Chinese immigrants. 
                     <a href="/neighborhood/north">Click here to learn more.</a>""",
-    'long_desc': """
+    'long_desc': """North Beach is San Francisco's "Little Italy" and has historically been home to a
+                large Italian American population. It still has many Italian restaurants, although many other
+                ethnic groups currently live in the neighborhood. It was also the historic center of beatnik
+                subculture and has become one of San Francisco's main nightlife districts.
+
+                The North Beach Festival street fair held annually in June is considered the city's oldest
+                and largest street fair.
                 """,
     'median_rent': 2814,
     'median_home_price': 1285000,
@@ -260,13 +257,13 @@ neighborhoods = [
                     San Francisco Bay, the Palace of Fine Arts and the Presidio.
                     It is SF's most expensive neighborhood.
                     <a href="/neighborhood/pac">Click here to learn more.</a>""",
-    'long_desc': """In 2013, Pacific Heights was named the most expensive neighborhood in the United States. 
-                    The article stated that if San Francisco's Pacific Heights had its own zip code, it would be 
-                    the most expensive place to live in the United States. 
+    'long_desc': """If Pacific Heights had its own zip code, it would be one of the most expensive
+                    places to live in the United States.  The area is famous for its billionaire 
+                    residents and record-breaking prices.   
 
-                    Pacific Heights features two parks, Lafayette and Alta Plaza. Visible to the 
-                    north are the Golden Gate Bridge, the Marin Headlands, and Alcatraz Island. 
-                    Visible to the south are Twin Peaks and the Sutro Tower.""",
+                    It features two parks, Lafayette and Alta Plaza, and boasts fantastic
+                    views. Visible to the north are the Golden Gate Bridge, the Marin Headlands, 
+                    and Alcatraz Island. Visible to the south are Twin Peaks and the Sutro Tower.""",
     'median_rent': 2512,
     'median_home_price': 5600000,
     'sq_ft_price': 1620,
@@ -286,9 +283,9 @@ neighborhoods = [
                     two freeways and a Caltrain station. 
                     <a href="/neighborhood/potrero">Click here to learn more.</a>""",
     'long_desc': """Potrero Hill is one of the sunniest neighborhoods in San Francisco.
-                    It is a residential neighborhood and not considered a tourist destination. 
-                    Although it is not the most walkable neighborhood in San Francisco due to 
-                    its hills, it is generally considered a convenient location due to its 
+                    It's a residential neighborhood and not considered a tourist destination. 
+                    Although it's most walkable neighborhood in San Francisco due to 
+                    its hills, it's generally considered a convenient location due to its 
                     proximity to offices, shopping, dining, entertainment, 
                     freeways and a Caltrain station. Despite being surrounded by busy 
                     neighborhoods, Potrero Hill is generally quiet and sleepy.""",
@@ -310,13 +307,12 @@ neighborhoods = [
                     by wooded areas, hills, and scenic vistas overlooking the Golden Gate Bridge, 
                     San Francisco Bay, and the Pacific Ocean.
                     <a href="/neighborhood/presidio">Click here to learn more.</a>""",
-    'long_desc': """The Presidio of San Francisco Francisco is a park and former U.S. Army 
-                    military fort and is part of the Golden Gate National Recreation Area.
-                    A major planned component of the Presidio's park attractions is the 
-                    Tunnel Tops project, which would construct a 14-acre park slated to be open
-                    for public use in 2021.  It houses several visitors centers and Crissy Field
-                    Center, an urban environmental education center with programs for schools, 
-                    public workshops, after-school programs, summer camps, and more.""",
+    'long_desc': """The Presidio is a park and former U.S. Army military fort and is part of 
+                    the Golden Gate National Recreation Area. A major planned component of the Presidio's 
+                    park attractions is the Tunnel Tops project, which would construct a 14-acre park 
+                    slated to be openfor public use in 2021.  It houses several visitors centers and 
+                    Crissy Field Center, an urban environmental education center with programs 
+                    for schools, public workshops, after-school programs, summer camps, and more.""",
     'median_rent': 4738,
     'median_home_price': 3600000,
     'sq_ft_price': 1200,
@@ -335,16 +331,11 @@ neighborhoods = [
                     Cambodian, Korean, Burmese, and Russian cuisine. It's a diverse
                     area with sizable Chinese and Russian populations.
                     <a href="/neighborhood/richmond">Click here to learn more.</a>""",
-    'long_desc': """The Richmond is in many ways defined by its relation to the parks; 
-                    bordered by Golden Gate Park on the south, the Pacific Ocean to the west, 
-                    and Lincoln Park, Land's End, Mountain Lake Park and the Presidio of 
-                    San Francisco to the north, bisected by the Presidio Greenbelt. 
-                    It has many influences from the Chinese-American culture. One of its 
-                    three commercial strips, Clement Street, 
-                    is sometimes called the second Chinatown due to the high concentration 
+    'long_desc': """The Richmond has influences from the Chinese-American culture and of its 
+                    three commercial strips, Clement Street, is sometimes called the second 
+                    Chinatown due to the high concentration 
                     of Chinese establishments.  The Richmond also has deep Irish and 
-                    Russian roots and has many Catholic and Orthodox churches.
-                """,
+                    Russian roots and has many Catholic and Orthodox churches.""",
     'median_rent': 3205,
     'median_home_price': 2305000,
     'sq_ft_price': 1016,
@@ -363,12 +354,12 @@ neighborhoods = [
                     Marin County, the Golden Gate Bridge and Alcatraz. Tourists frequent the cable car 
                     line along Hyde Street, which is lined with restaurants and shops.
                     <a href="/neighborhood/russian">Click here to learn more.</a>""",
-    'long_desc': """The neighborhood is most famous for Lombard Street, a one-way street 
+    'long_desc': """Russian Hill is one of San Francisco's original "Seven Hills."
+                    At the northern foot of the hill is Ghiradelli Square, Aquatic Park, and
+                    Fisherman's Wharf, a popular tourist area.
+                    It's most famous for Lombard Street, a one-way street 
                     in which the roadway has eight sharp turns that have earned 
                     the street the distinction of being "the crookedest street in the world". 
-                    At the northern foot of the hill is Ghirardelli Square, 
-                    which sits on the waterfront of the San Francisco Bay, 
-                    Aquatic Park, and Fisherman's Wharf, a popular tourist area.
                     Because of the steepness of the hill, many streets are staircases.""",
     'median_rent': 2489,
     'median_home_price': 3850000,
@@ -418,10 +409,8 @@ neighborhoods = [
 
                     There is a year-round, Sunday morning farmers' market offering 
                     California-grown produce, fish, eggs, and meat, as well as local food 
-                    vendors and artisans.  
-
-                    Stern Grove, a heavily wooded park and amphitheater, is known 
-                    for its annual summer festival.""",
+                    vendors and artisans.  It also includes Stern Grove, a heavily wooded park 
+                    and amphitheater, known for its annual summer festival.""",
     'median_rent': 2813,
     'median_home_price': 1850000,
     'sq_ft_price': 1033,
