@@ -41,7 +41,7 @@ neighborhoods = [
     'sq_ft_price': 1093,
     'walk_score': 89,
     'transit_score': 77,
-    'images': ''        
+    'images': '/static/img/bernal1.jpeg, /static/img/bernal2.jpg, /static/img/bernal3.jpeg'        
     },
     {
     'neighborhood_id': 'castro',
@@ -68,7 +68,7 @@ neighborhoods = [
     'sq_ft_price': 1265,
     'walk_score': 99,
     'transit_score': 95,
-    'images': '/static/img/castro1.jpeg'         
+    'images': '/static/img/castro1.jpeg, /static/img/castro2.jpeg, /static/img/castro3.jpeg'         
     },
     {
     'neighborhood_id': 'haight',
@@ -94,7 +94,7 @@ neighborhoods = [
     'sq_ft_price': 1221,
     'walk_score': 97,
     'transit_score': 80,
-    'images': '/static/img/haight1.jpeg'   
+    'images': '/static/img/haight1.jpeg, /static/img/haight2.jpeg, /static/img/haight3.jpeg'   
     },
     {
     'neighborhood_id': 'marina',
@@ -167,7 +167,7 @@ neighborhoods = [
     'sq_ft_price': 1283,
     'walk_score': 99,
     'transit_score': 100,
-    'images': '/static/img/financial1.jpeg'     
+    'images': '/static/img/financial1.jpeg, /static/img/financial2.jpeg, /static/img/financial3.jpeg'     
     },
     {
     'neighborhood_id': 'nob',
@@ -191,7 +191,7 @@ neighborhoods = [
     'sq_ft_price': 1149,
     'walk_score': 99,
     'transit_score': 100,
-    'images': '/static/img/nob1.jpeg'    
+    'images': '/static/img/nob1.jpeg, /static/img/nob2.webp, /static/img/nob3.jpg'    
     },
     {
     'neighborhood_id': 'noe',
@@ -217,7 +217,7 @@ neighborhoods = [
     'sq_ft_price': 1383,
     'walk_score': 92,
     'transit_score': 73,
-    'images': '/static/img/noe1.jpg'      
+    'images': '/static/img/noe1.jpg, /static/img/noe2.jpeg, /static/img/noe3.jpeg'      
     },
     {
     'neighborhood_id': 'north',
@@ -244,7 +244,7 @@ neighborhoods = [
     'sq_ft_price': 1196,
     'walk_score': 99,
     'transit_score': 95,
-    'images': '/static/img/north1.jpeg'    
+    'images': '/static/img/north1.jpeg, /static/img/north2.jpg, /static/img/north3.jpeg'    
     },
     {
     'neighborhood_id': 'pac',
@@ -269,7 +269,7 @@ neighborhoods = [
     'sq_ft_price': 1620,
     'walk_score': 96,
     'transit_score': 89,
-    'images': '/static/img/pac1.jpg'    
+    'images': '/static/img/pac1.jpg, /static/img/pac2.webp, /static/img/pac3.jpeg'    
     },
     {
     'neighborhood_id': 'potrero',
@@ -294,7 +294,7 @@ neighborhoods = [
     'sq_ft_price': 1101,
     'walk_score': 89,
     'transit_score': 75,
-    'images': '/static/img/potrero1.jpeg'     
+    'images': '/static/img/potrero1.jpeg, /static/img/potrero2.jpeg, /static/img/potrero3.jpeg'     
     },
     {
     'neighborhood_id': 'presidio',
@@ -318,7 +318,7 @@ neighborhoods = [
     'sq_ft_price': 1200,
     'walk_score': 41,
     'transit_score': 59,
-    'images': '/static/img/presidio1.jpeg'   
+    'images': '/static/img/presidio1.jpeg, /static/img/presidio2.jpeg, /static/img/presidio3.gif'   
     },
     {
     'neighborhood_id': 'richmond',
@@ -341,17 +341,17 @@ neighborhoods = [
     'sq_ft_price': 1016,
     'walk_score': 94,
     'transit_score': 77,
-    'images': '/static/img/richmond1.jpg'   
+    'images': '/static/img/richmond1.jpg, /static/img/richmond2.jpeg, /static/img/richmond3.jpeg'   
     },
     {
     'neighborhood_id': 'russian',
     'name': 'Russian Hill',
     'latitude': 37.8011,
-    'longitude': 122.4194,
+    'longitude': -122.4194,
     'short_desc': """<div style='float:right'><img src='/static/img/russian1.jpeg' width="120" height="120" vertical-align="middle"></div>
                     <div style='float:left; height:130px; width:180px;'>
                     Views from the top of <b>Russian Hill</b> extend in several directions, including the Bay Bridge, 
-                    Marin County, the Golden Gate Bridge and Alcatraz. Tourists frequent the cable car 
+                    Marin County, and the Golden Gate Bridge. Tourists frequent the cable car 
                     line along Hyde Street, which is lined with restaurants and shops.
                     <a href="/neighborhood/russian">Click here to learn more.</a>""",
     'long_desc': """Russian Hill is one of San Francisco's original "Seven Hills."
@@ -366,7 +366,7 @@ neighborhoods = [
     'sq_ft_price': 1408,
     'walk_score': 97,
     'transit_score': 93,
-    'images': '/static/img/russian1.jpeg'   
+    'images': '/static/img/russian1.jpeg, /static/img/russian2.jpeg, /static/img/russian3.jpeg'   
     },
     {
     'neighborhood_id': 'soma',
@@ -389,7 +389,7 @@ neighborhoods = [
     'sq_ft_price': 917,
     'walk_score': 97,
     'transit_score': 100,
-    'images': '/static/img/soma1.jpeg'   
+    'images': '/static/img/soma1.jpeg, /static/img/soma2.jpeg, /static/img/soma3.jpeg'   
     }, 
     {
     'neighborhood_id': 'sunset',
@@ -416,7 +416,7 @@ neighborhoods = [
     'sq_ft_price': 1033,
     'walk_score': 95,
     'transit_score': 72,
-    'images': '/static/img/sunset1.jpeg'  
+    'images': '/static/img/sunset1.jpeg, /static/img/sunset2.jpeg, /static/img/sunset3.jpeg'  
     }
 ]
 
