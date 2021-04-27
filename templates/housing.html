@@ -13,8 +13,15 @@
     <div>
       <h3> {{ posting.date.strftime('%m-%d-%y') }}  {{ posting.title }} </h3>
         <p> {{ posting.desc}} {{ posting.contact_info}}</p>
+        {% if posting.user_email == session['current_user'] %}
+        <p><form action="/delete_posting/{{ posting.posting_id }}" method="POST"></p>
+          <button type="submit">Delete</button>
+          </form>
+        {% endif %}
     </div>
 
   {% endfor %}
+
+    <a href="/check_login/{{ neighborhood_id }}">Post {{ name }} housing</a>   
   
 {% endblock %}

@@ -134,7 +134,8 @@ def show_housing(neighborhood_id):
     name = neighborhood.name
 
     return render_template('housing.html', postings=postings,
-                                            name=name)
+                                            name=name,
+                                            neighborhood_id=neighborhood_id)
 
 #This route is used to get neighborhood details from DB to the front end
 #via AJAX requests in the maps JS files. The data is used to populate
