@@ -18,6 +18,7 @@ class Neighborhood(db.Model):
     long_desc = db.Column(db.Text, nullable=False)
     median_rent = db.Column(db.Integer, nullable=False)
     median_home_price = db.Column(db.Integer, nullable=False)
+    sq_ft_price = db.Column(db.Integer, nullable=True)
     walk_score = db.Column(db.Integer, nullable=True)
     transit_score = db.Column(db.Integer, nullable=True)
     images = db.Column(db.Text, nullable=True)

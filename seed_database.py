@@ -37,7 +37,8 @@ neighborhoods = [
                     and property values are increasing as urban professionals replace 
                     working-class home owners and renters""",
     'median_rent': 2704,
-    'median_home_price': 0,
+    'median_home_price': 1621000,
+    'sq_ft_price': 1093,
     'walk_score': 89,
     'transit_score': 77,
     'images': ''        
@@ -62,7 +63,8 @@ neighborhoods = [
                     There are cafes, the Castro Theater, and many businesses that cater to or openly welcome LGBT consumers. 
                     These establishments make the Castro an area of high spending and lead to high tourist traffic.""",
     'median_rent': 0,
-    'median_home_price': 0,
+    'median_home_price': 2645000,
+    'sq_ft_price': 1265,
     'walk_score': 99,
     'transit_score': 95,
     'images': '/static/img/castro1.jpeg'         
@@ -89,7 +91,8 @@ neighborhoods = [
                     offered a concentrated gathering spot for hippies to create a social 
                     experiment that would soon spread throughout the nation""",
     'median_rent': 3094,
-    'median_home_price': 0,
+    'median_home_price': 3540000,
+    'sq_ft_price': 1221,
     'walk_score': 97,
     'transit_score': 80,
     'images': '/static/img/haight1.jpeg'   
@@ -108,7 +111,8 @@ neighborhoods = [
                     It's most famous for the Palace of Fine Arts.
                     """,
     'median_rent': 2460,
-    'median_home_price': 0,
+    'median_home_price': 4296000,
+    'sq_ft_price': 1394,
     'walk_score': 98,
     'transit_score': 75,
     'images': '/static/img/marina1.jpeg, /static/img/marina2.jpeg, /static/img/marina3.jpeg'
@@ -140,7 +144,8 @@ neighborhoods = [
                      for their restaurants, bars, galleries and street life.
                  """,
     'median_rent': 2911,
-    'median_home_price': 0,
+    'median_home_price': 1765000,
+    'sq_ft_price': 967,
     'walk_score': 99,
     'transit_score': 85,
     'images': '/static/img/mission1.jpg, /static/img/mission2.jpeg, /static/img/mission3.jpeg'        
@@ -162,7 +167,8 @@ neighborhoods = [
                 Ferry Building Marketplace where a farmer's market is held every Saturday.
                 """,
     'median_rent': 0,
-    'median_home_price': 0,
+    'median_home_price': 1599000,
+    'sq_ft_price': 1283,
     'walk_score': 99,
     'transit_score': 100,
     'images': '/static/img/financial1.jpeg'     
@@ -174,7 +180,7 @@ neighborhoods = [
     'longitude': -122.4161,
     'short_desc': """<div style='float:right'><img src='/static/img/nob1.jpeg' width="120" height="120" vertical-align="middle"></div>
                     <div style='float:left; height:130px; width:180px;'>
-                    <b>Nob Hill</b> Nob Hill is known for its numerous luxury hotels and historic mansions.
+                    <b>Nob Hill</b> is known for its numerous luxury hotels and historic mansions.
                     It has historically served as a center of San Francisco's upper class.
                     <a href="/neighborhood/nob">Click here to learn more.</a>""",
     'long_desc': """Nob Hill is known for its numerous luxury hotels and historic mansions.
@@ -186,7 +192,8 @@ neighborhoods = [
                     Michelin-starred restaurants, boutiques, cultural institutions, art galleries,
                     and historic landmarks.""",
     'median_rent': 2491,
-    'median_home_price': 0,
+    'median_home_price': 1280000,
+    'sq_ft_price': 1149,
     'walk_score': 99,
     'transit_score': 100,
     'images': '/static/img/nob1.jpeg'    
@@ -215,7 +222,8 @@ neighborhoods = [
                     surrounding neighborhoods.
                 """,
     'median_rent': 2815,
-    'median_home_price': 0,
+    'median_home_price': 2800000,
+    'sq_ft_price': 1383,
     'walk_score': 92,
     'transit_score': 73,
     'images': '/static/img/noe1.jpg'      
@@ -235,7 +243,8 @@ neighborhoods = [
     'long_desc': """
                 """,
     'median_rent': 2814,
-    'median_home_price': 0,
+    'median_home_price': 1285000,
+    'sq_ft_price': 1196,
     'walk_score': 99,
     'transit_score': 95,
     'images': '/static/img/north1.jpeg'    
@@ -259,7 +268,8 @@ neighborhoods = [
                     north are the Golden Gate Bridge, the Marin Headlands, and Alcatraz Island. 
                     Visible to the south are Twin Peaks and the Sutro Tower.""",
     'median_rent': 2512,
-    'median_home_price': 0,
+    'median_home_price': 5600000,
+    'sq_ft_price': 1620,
     'walk_score': 96,
     'transit_score': 89,
     'images': '/static/img/pac1.jpg'    
@@ -283,7 +293,8 @@ neighborhoods = [
                     freeways and a Caltrain station. Despite being surrounded by busy 
                     neighborhoods, Potrero Hill is generally quiet and sleepy.""",
     'median_rent': 2992,
-    'median_home_price': 0,
+    'median_home_price': 1898000,
+    'sq_ft_price': 1101,
     'walk_score': 89,
     'transit_score': 75,
     'images': '/static/img/potrero1.jpeg'     
@@ -307,7 +318,8 @@ neighborhoods = [
                     Center, an urban environmental education center with programs for schools, 
                     public workshops, after-school programs, summer camps, and more.""",
     'median_rent': 4738,
-    'median_home_price': 0,
+    'median_home_price': 3600000,
+    'sq_ft_price': 1200,
     'walk_score': 41,
     'transit_score': 59,
     'images': '/static/img/presidio1.jpeg'   
@@ -334,7 +346,8 @@ neighborhoods = [
                     Russian roots and has many Catholic and Orthodox churches.
                 """,
     'median_rent': 3205,
-    'median_home_price': 38500000,
+    'median_home_price': 2305000,
+    'sq_ft_price': 1016,
     'walk_score': 94,
     'transit_score': 77,
     'images': '/static/img/richmond1.jpg'   
@@ -358,7 +371,8 @@ neighborhoods = [
                     Aquatic Park, and Fisherman's Wharf, a popular tourist area.
                     Because of the steepness of the hill, many streets are staircases.""",
     'median_rent': 2489,
-    'median_home_price': 0,
+    'median_home_price': 3850000,
+    'sq_ft_price': 1408,
     'walk_score': 97,
     'transit_score': 93,
     'images': '/static/img/russian1.jpeg'   
@@ -380,7 +394,8 @@ neighborhoods = [
                     SOMA is home to many of San Francisco's museums, including SFMOMA, the Yerba 
                     Buena Center for the Arts and more.""",
     'median_rent': 2992,
-    'median_home_price': 0,
+    'median_home_price': 1122500,
+    'sq_ft_price': 917,
     'walk_score': 97,
     'transit_score': 100,
     'images': '/static/img/soma1.jpeg'   
@@ -408,7 +423,8 @@ neighborhoods = [
                     Stern Grove, a heavily wooded park and amphitheater, is known 
                     for its annual summer festival.""",
     'median_rent': 2813,
-    'median_home_price': 0,
+    'median_home_price': 1850000,
+    'sq_ft_price': 1033,
     'walk_score': 95,
     'transit_score': 72,
     'images': '/static/img/sunset1.jpeg'  
@@ -421,10 +437,11 @@ latitude = 0
 longitude = 0
 short_desc = ""
 long_desc = ""
-median_rent = ""
-median_home_price = ""
-walk_score = ""
-transit_score = ""
+median_rent = 0
+median_home_price = 0
+sq_ft_price = 0
+walk_score = 0
+transit_score = 0
 images = ""
 
 for neighborhood in neighborhoods: 
@@ -436,12 +453,13 @@ for neighborhood in neighborhoods:
     long_desc = neighborhood['long_desc']
     median_rent = neighborhood['median_rent']
     median_home_price = neighborhood['median_home_price']
+    sq_ft_price = neighborhood['sq_ft_price']
     walk_score = neighborhood['walk_score']
     transit_score = neighborhood['transit_score']
     images = neighborhood['images']
 
     crud.create_neighborhood(neighborhood_id, name, latitude, longitude, 
-        short_desc, long_desc, median_rent, median_home_price, walk_score, transit_score, images)
+        short_desc, long_desc, median_rent, median_home_price, sq_ft_price, walk_score, transit_score, images)
                                                      
 
 #Create fake users with which to seed the db

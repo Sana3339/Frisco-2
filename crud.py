@@ -3,8 +3,8 @@
 from model import db, Neighborhood, Posting, User, Image_of_Posting, Image_of_Neighborhood, Restaurant, connect_to_db
 
 def create_neighborhood(neighborhood_id, name, latitude, longitude,
-                        short_desc, long_desc, median_rent,
-                        median_home_price, walk_score, transit_score,images):
+                        short_desc, long_desc, median_rent, median_home_price,
+                        sq_ft_price, walk_score, transit_score,images):
     """Create and return a new neighborhood."""
 
     neighborhood = Neighborhood(neighborhood_id=neighborhood_id,
@@ -15,6 +15,7 @@ def create_neighborhood(neighborhood_id, name, latitude, longitude,
                                 long_desc=long_desc,
                                 median_rent=median_rent,
                                 median_home_price=median_home_price,
+                                sq_ft_price=sq_ft_price,
                                 walk_score=walk_score,
                                 transit_score=transit_score,
                                 images=images)

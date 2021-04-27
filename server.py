@@ -106,6 +106,7 @@ def show_neighborhood(neighborhood_id):
     name = neighborhood.name
     long_desc = neighborhood.long_desc
     median_home_price = neighborhood.median_home_price
+    sq_ft_price = neighborhood.sq_ft_price
     median_rental = neighborhood.median_rent
     walk_score = neighborhood.walk_score
     transit_score = neighborhood.transit_score
@@ -117,6 +118,7 @@ def show_neighborhood(neighborhood_id):
                             name=name,
                             description=long_desc,
                             median_home=median_home_price,
+                            sq_ft_price=sq_ft_price,
                             median_rental=median_rental,
                             walk_score=walk_score,
                             transit_score=transit_score,
