@@ -66,7 +66,10 @@ def get_restaurant_website(place_id):
 def show_restaurant_details(neighborhood_id):
     """Show a list of restaurants in a specific neighborhood"""
 
-    payload = {"query": f"restaurants in {neighborhood_id}",
+    neighborhood = crud.get_neighborhood_by_id(neighborhood_id)
+    neighborhood_name = neighborhood.name
+
+    payload = {"query": f"restaurants in {neighborhood_name} in San Francisco",
                 "key": GOOG_API_KEY}
 
     res = requests.get('https://maps.googleapis.com/maps/api/place/textsearch/json', params=payload)

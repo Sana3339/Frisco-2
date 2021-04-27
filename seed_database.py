@@ -232,7 +232,7 @@ neighborhoods = [
                     residential neighborhood populated with young urban professionals, 
                     families, and Chinese immigrants. 
                     <a href="/neighborhood/north">Click here to learn more.</a>""",
-    'long_desc': """"
+    'long_desc': """
                 """,
     'median_rent': 2814,
     'median_home_price': 0,
