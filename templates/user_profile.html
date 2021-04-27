@@ -4,10 +4,12 @@
 
   <h1>Welcome {{ name }}</h1>
 
-  <a href="/postings_map">Post Housing</a>
-  <p>
-    <a href="/log_out">Logout</a>
-</p>
+      <p>
+        <a href="/postings_map">Post Housing</a>
+    </p>
+      <p>
+        <a href="/log_out">Logout</a>
+    </p>
 
     {% if postings == [] %}
         You don't have any active housing postings.
@@ -24,6 +26,7 @@
       {% endfor %}
 
     {% endif %}
+
 
   {% endblock %}
 

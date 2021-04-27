@@ -207,10 +207,9 @@ def register_user():
 
     else:
         crud.create_user(email, password)
-        flash('Account created successfully')
-        session['current_user'] = email
+        flash('Account created successfully. Please log in.')
 
-    return redirect('/success_login')
+    return redirect('/login')
 
 #This route checks if a user is in the database and logs them in if so.
 @app.route('/handle-login', methods=['POST'])
